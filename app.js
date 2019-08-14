@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
+const users = require('./routes/api/users');
+const quizes = require('./routes/api/quizes');
 
-app.get("/", (req, res) => res.send("Hello Baby"));
+app.get("/", (req, res, next) => res.send("Hello Baby"));
+app.use("/api/users", users);
+app.use("/api/quizes", quizes);
+
 const db = require('./config/keys').mongoURI;
 const port = process.env.PORT || 5000;
 mongoose
