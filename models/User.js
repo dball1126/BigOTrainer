@@ -14,7 +14,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    score: {
+    good_score: {
+        type: Number,
+        default: 0
+    },
+    bad_score: {
         type: Number,
         default: 0
     },
