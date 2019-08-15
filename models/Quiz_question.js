@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongooese');
 const Schema = mongoose.Schema;
 
-const QuizSchema = new Schema({
+QuizQuestionSchema = new Schema({
     handle: {
         type: String,
         required: true
     },
-    name: {
+    title: {
         type: String,
         required: true
     },
-    level: {
-        type: Number,
+    answer: {
+        type: String,
         required: true
     },
     date: {
