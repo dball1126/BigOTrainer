@@ -23,3 +23,5 @@ const OptionSchema = new Schema({
         default: Date.now
     }
 })
+
+module.exports = Option = mongoose.model('options', OptionSchema);
