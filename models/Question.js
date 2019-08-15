@@ -1,11 +1,7 @@
-const mongoose = require('mongooese');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-QuizQuestionSchema = new Schema({
-    handle: {
-        type: String,
-        required: true
-    },
+const QuestionSchema = new Schema({
     title: {
         type: String,
         required: true

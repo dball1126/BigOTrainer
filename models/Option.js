@@ -1,27 +1,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-    email: {
+const OptionSchema = new Schema({
+    title: {
         type: String,
         required: true
     },
-    username: {
+    letter: {
         type: String,
         required: true
     },
-    password: {
+    answer: {
         type: String,
         required: true
     },
-    score: {
+    quiz_question_id: {
         type: Number,
-        default: 0
+        required: true
     },
     date: {
         type: Date,
         default: Date.now
     }
 })
-
-module.expres = User = mongoose.model('users', UserSchema);
