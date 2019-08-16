@@ -25,19 +25,19 @@ router.get('/:id', (req, res) => {
         .catch(err => res.status(404)).json({ noQuizFound: 'No Quiz found with that id'})
 })
 
-router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        const { errors, isValid} = validateQuizInput(req.body);
+router.post('/homepage', (req, res) => {
+    // passport.authenticate('jwt', { session: false }),
+    // (req, res) => {
+    //     const { errors, isValid} = validateQuizInput(req.body);
         
-        if (!isValid) {
-            return res.status(400).json(errors)
-        }
+    //     if (!isValid) {
+    //         return res.status(400).json(errors)
+    //     }
 
         const newQuiz = new Quiz({
             name: req.body.name,
             level: req.body.level
         })
         newQuiz.save().then(quiz => res.json(quiz));
-    })
+     } )
 module.exports = router;
