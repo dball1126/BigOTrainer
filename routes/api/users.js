@@ -72,7 +72,7 @@ router.post('/login', (req, res) => {
             .then(isMatch => {
                 if (isMatch) {
                     //Data that is sent to the front end
-                    const payload = {id: user.id, username: user.username};
+                    const payload = {id: user.id, username: user.username, email: user.email};
 
                     jwt.sign(
                         payload,
@@ -82,7 +82,7 @@ router.post('/login', (req, res) => {
                         (err, token) => {
                             res.json({
                                 success: true,
-                                token: 'Bearer ' + token
+                                token: "Bearer " + token
                             });
                         });
                 } else {
@@ -92,6 +92,15 @@ router.post('/login', (req, res) => {
             })    
         })
 });
-
+// users.js
+// You may want to start commenting in information about your routes so that you can find the appropriate ones quickly.
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+    res.json({ 
+         
+        id: req.user.id,
+        username: req.user.username,
+        email: req.user.email
+    });
+})
 
 module.exports = router;
