@@ -8,7 +8,7 @@ module.exports = function(data) {
     data.password = validText(data.password) ? data.password : "";
     data.username = validText(data.username) ? data.username : "";
 
-    if (Validator.isEmail(data.email)) {
+    if (!Validator.isEmail(data.email)) {
         errors.email = "Email is invalid";
     }
 
