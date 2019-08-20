@@ -4,14 +4,14 @@ import jwt_decode from 'jwt-decode';
 export const RECEIVE_USER_LOGOUT = 'RECEIVE_USER_LOGOUT';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-export const RECEIVE_USER_SIGN_IN = 'RECEIVE_USER_SIGN IN';
+export const RECEIVE_USER_SIGN_IN = 'RECEIVE_USER_SIGN_IN';
 
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 })
 
-export const logout = () => dippatch => {
+export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken')
 
     APIUtil.setAuthToken(false)
@@ -21,7 +21,7 @@ export const logout = () => dippatch => {
 
 export const receiveCurrentUser = (currentUser) => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    currentUser
 })
 
 export const receiveUserSignIn = () => ({
@@ -52,4 +52,3 @@ export const signup = user => dispatch => (
         )
     ))
 
-    

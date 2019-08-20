@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const preloadedState = { session: { isAuthenticated: true, user: decodedUser}};
 
         store = configureStore(preloadedState);
-        const currenttime = Date.now() / 1000;
+        const currentTime = Date.now() / 1000;
 
         if (decodedUser.exp < currentTime) {
             store.dispatch(logout());
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore({});
     }
-    
+
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 })
