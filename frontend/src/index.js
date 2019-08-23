@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app';
 // import * as serviceWorker from './serviceWorker';
-
+import '../src/assets/stylesheets/homepage.css'; 
 import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
