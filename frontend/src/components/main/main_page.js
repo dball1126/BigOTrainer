@@ -5,7 +5,11 @@ class MainPage extends React.Component {
         return (
             <div className="homepage-container">
                 <NavBar />
-                <h1>BigOTrainer</h1>
+            <div className="homepage-banner">
+                <div className="homepage-title">
+                    <h1>BigOTrainer</h1>
+                </div>
+            </div>
                 <footer>
                     Footer
                 </footer>

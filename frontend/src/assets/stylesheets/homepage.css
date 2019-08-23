@@ -92,3 +92,26 @@
     color: #FFFFFF;
     transition: all 0.4s ease-in-out;
 }
+
+.homepage-banner {
+    height: 500px;
+    background-color: rgb(238, 135, 105)
+}
+
+.homepage-title {
+    text-align: center;
+    font-size: 100px;
+    padding-top: 175px;
+    color: #FFFFFF;
+         /* color: black; */
+   /* -webkit-text-fill-color: transparent; 
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: #FFFFFF; */
+   /* font-size: 64px;
+  font-family: 'Arvo', serif; */
+  /* text-shadow: 2px 4px 3px rgba(0,0,0,3); */
+     text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+}
