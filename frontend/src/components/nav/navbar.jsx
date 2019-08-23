@@ -19,14 +19,20 @@ class NavBar extends React.Component {
             return (
                 <div className="session-box">
                     <Link to={'/quizes'}>All Quizes</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <div className="logout-box">
+                        <button onClick={this.logoutUser}>Logout</button>
+                    </div>
                 </div>
             );
         } else {
             return (
                 <div className="session-box">
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
+                    <div className="signup-box">
+                        <Link to={'/signup'}>Signup</Link>
+                    </div>
+                    <div className="login-box">
+                        <Link to={'/login'}>Login</Link>
+                    </div>
                 </div>
             );
         }
