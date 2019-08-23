@@ -10,8 +10,11 @@ class MainPage extends React.Component {
                     <h1>BigOTrainer</h1>
                 </div>
             </div>
-                <footer>
-                    Footer
+                <div className="homepage-body">
+
+                </div>
+                <footer className="homepage-footer">
+                    
                 </footer>
             </div>
         )
