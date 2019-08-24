@@ -1,18 +1,13 @@
 import React from 'react';
 
-class QuizListItem extends React.Component {
-    
-
-    render() {
-        
-        
+const QuizListItem = ({name, level}) => {
+      
         return (
             <div>
-                <h3>{this.props.name}</h3>
-                <h3>{this.props.level}</h3>
+                <h3>{name}</h3>
+                <h3>{level}</h3>
             </div>
         )
-    }
 }
 
 export default QuizListItem;

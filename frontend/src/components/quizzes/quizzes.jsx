@@ -18,9 +18,6 @@ class Quiz extends React.Component {
         this.setState({ quizzes: newState.quizzes})
     }
 
-
-
-
     render() {
         if (this.state.quizzes.length === 0) {
             return (<div>There are no Quizzes</div>)
