@@ -4,19 +4,19 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Quiz = require('../../models/Quiz');
-const validateQuizInput = require('../../validation/quizes')
+const validateQuizInput = require('../../validation/quizzes')
 
 router.get('/', (req, res) => {
     Quiz.find()
         .sort({ date: -1 })
-        .then(quizes => res.json(quizes))
-        .catch(err => res.status(400).json({ noQuizesFound: 'No quizes found'}))
+        .then(quizzes => res.json(quizzes))
+        .catch(err => res.status(400).json({ noQuizzesFound: 'No quizzes found'}))
 });
 
 router.get('/user/:user_id', (req, res) => {
     Quiz.find({user: req.params.user_id})
-        .then(quizes => res.json(quizes))
-        .catch(err => res.status(404).json({ noQuizFound: 'No Quizes found from taht user'}))
+        .then(quizzes => res.json(quizzes))
+        .catch(err => res.status(404).json({ noQuizFound: 'No Quizzes found from that user'}))
 })
 
 router.get('/:id', (req, res) => {

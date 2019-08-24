@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchQuizzes } from '../../actions/quiz_actions';
-import Quizzes from './quizzes';
+import Quizzes from './quizz_box';
 
 const mapStateToProps = (state) => {
     return {
