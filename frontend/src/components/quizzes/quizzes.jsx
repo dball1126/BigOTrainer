@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import QuizBox from './quizz_box';
+import QuizListItem from './quiz_list_item';
 
 class Quiz extends React.Component {
     constructor(props){
@@ -18,16 +18,20 @@ class Quiz extends React.Component {
         this.setState({ quizzes: newState.quizzes})
     }
 
+
+
+
     render() {
         if (this.state.quizzes.length === 0) {
             return (<div>There are no Quizzes</div>)
         } else {
+            
             return (
                 <div>
                     <h2>All Quizzes</h2>
-                    {/* {this.state.quizzes.map(quiz => (
-                        <QuizBox key={quiz._id} name={quiz.name} />
-                    ))} */}
+                    {this.state.quizzes.map(quiz => (
+                        <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>
+                    ))}
                 </div>
             )
         }
