@@ -49,6 +49,12 @@
     margin-top: 5px;
     padding: 10px;
     background: #fff;
-    border: 1px solid #999;
-    
+    border: 1px solid #999; 
+}
+
+.credentials-header {
+    color: rgb(239, 136, 105);
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
 }
