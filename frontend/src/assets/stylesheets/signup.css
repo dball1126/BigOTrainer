@@ -1,5 +1,6 @@
 .navbar-other-container{
     height: 60px;
+    background-color: rgb(239, 136, 105);
 }
 
 .signup-form-box {
@@ -9,7 +10,7 @@
 }
 
 .signup-form-container {
-    background-color: rgb(239, 136, 105);
+    background-color:#FFFFFF;
     height: 1000px;
 }
 
@@ -17,30 +18,37 @@
     width: 300px;
     margin: 0 auto;
     padding-top: 100px;
+
 }
 
 .session-submit {
     width: 100%;
-    height: 40px;
+    height: 50px;
     border-radius: 4px;
-    background-color: #f2f2f2;
+    background-color: rgb(239, 136, 105);
     border: 1px solid #f2f2f2;
-    color: rgb(239, 136, 105);
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 20px;
+    margin-top: 5px;
+   
 }
 
 .session-submit:hover {
-    background-color: #CCC;
+    background-color: #f2f2f2;
     font-weight: 800;
+    color: rgb(239, 136, 105);
     transition: all 0.4s ease-in-out;
 }
 
-.password {
-    width: 95%;
+.credentials {
+    width: 92%;
     height: 20px;
     border-radius: 4px;
     margin-bottom: 5px;
     margin-top: 5px;
-    padding-left: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #999;
+    
 }
