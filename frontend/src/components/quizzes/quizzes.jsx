@@ -24,7 +24,7 @@ class Quiz extends React.Component {
         } else {
             
             return (
-                <div>
+                <div className="quizzes-container">
                     <h2>All Quizzes</h2>
                     {this.state.quizzes.map(quiz => (
                         <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>
