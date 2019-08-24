@@ -14,6 +14,13 @@ class SignupForm extends React.Component {
         this.clearedErrors = false;
     }
 
+    
+    sessionClickClose() {
+        const ele = document.getElementById("session-errors");
+        ele.style.display = "none";
+    }
+
+
     componentWillReceiveProps(nextProps){
         if (nextProps.signedIn === true) {
             this.props.history.push('/login');
@@ -42,8 +49,9 @@ class SignupForm extends React.Component {
         return(
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-S{i}`}>
+                    <li key={`error-S{i}`} id="session-errors">
                         {this.state.errors[error]}
+                        <div onClick={() => this.sessionClickClose()} className="close-x">X</div>
                     </li>
                 ))}
             </ul>
@@ -53,10 +61,11 @@ class SignupForm extends React.Component {
         return (
             <div >
                 <NavBarOther />
-                <div className="signup-form-container">
-                <div className="signup-form-box">
+                <div className="session-form-container">
+                    {this.renderErrors()}
+                <div className="session-form-box">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
+                    <div className="session-form">
                         <div className="credentials-header">
                             <h1>Sign Up for BigOTrainer</h1>
                         </div>
@@ -80,7 +89,7 @@ class SignupForm extends React.Component {
                                placeholder="Password" />
                         <br />
                         <input type="submit" value="Submit" className="session-submit"/>
-                        {this.renderErrors()}
+                        
                     </div>
                 </form>
                     </div>
