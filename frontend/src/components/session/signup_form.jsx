@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import NavBarOther from '../nav/navbar_other';
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -51,7 +51,10 @@ class SignupForm extends React.Component {
     }
     render(){
         return (
-            <div className="signup-form-container">
+            <div >
+                <NavBarOther />
+                <div className="signup-form-container">
+                <div className="signup-form-box">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         <br />
@@ -70,10 +73,12 @@ class SignupForm extends React.Component {
                                onChange={this.update('password')}
                                placeholder="Password" />
                         <br />
-                        <input type="submit" value="Submit"/>
+                        <input type="submit" value="Submit" className="session-submit"/>
                         {this.renderErrors()}
                     </div>
                 </form>
+                    </div>
+                </div>
             </div>
         )
     }
