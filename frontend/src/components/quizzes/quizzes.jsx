@@ -25,9 +25,9 @@ class Quiz extends React.Component {
             return (
                 <div>
                     <h2>All Quizzes</h2>
-                    {this.state.quizzes.map(quiz => (
+                    {/* {this.state.quizzes.map(quiz => (
                         <QuizBox key={quiz._id} name={quiz.name} />
-                    ))}
+                    ))} */}
                 </div>
             )
         }

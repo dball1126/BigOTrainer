@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import { fetchQuizzes } from '../../actions/quiz_actions';
-import Quizzes from './quizz_box';
+import Quizzes from './quizzes';
 
 const mapStateToProps = (state) => {
+    debugger
     return {
         quizzes: Object.values(state.quizzes.all)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
+    
     return {
         fetchQuizzes: () => dispatch(fetchQuizzes())
     }

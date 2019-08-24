@@ -1,13 +1,14 @@
 import {RECEIVE_QUIZZES} from '../actions/quiz_actions';
 
-const QuizzesReducer = (oldState = {all: {}, user: {}, new: undefined}, action) => {
-    Object.freeze(oldState);
-    
+const QuizzesReducer = (state = {all: {}, data: {}, user: {}, new: undefined}, action) => {
+    debugger
+    Object.freeze(state);
+    let oldState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_QUIZZES:
-            debugger
+            oldState.all = action.quizzes.data
+            // return oldState;
             return oldState;
-            // return Object.assign({}, oldState, action.quizzes);
         default:
             return oldState;
     }
