@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const QuizListItem = ({key, name, level}) => {
       
@@ -14,4 +15,4 @@ const QuizListItem = ({key, name, level}) => {
         )
 }
 
-export default QuizListItem;
+export default withRouter(QuizListItem);
