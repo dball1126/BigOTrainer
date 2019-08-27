@@ -69,13 +69,19 @@
     font-weight: bold;
 }
 
-.logout-box a {
-    display: block;
-    text-decoration: none;
-    color: rgb(239, 136, 105);
-    width: 100%;
+.logout-button {
+    width: 100px;
     height: 100%;
+    text-align: center;
+    line-height: 2.5;
+    border-radius: 4px;
+    color: rgb(239, 136, 105);
     font-weight: bold;
+    border: solid 1px #FFFFFF;
+    margin-right: 5px;
+}
+.quizzes-container .session-container {
+    background-color: rgb(239, 136, 105);
 }
 
 .signup-box a:hover {
@@ -88,9 +94,9 @@
     color: #FFFFFF;
     transition: all 0.4s ease-in-out;
 }
-.logout-box a:hover {
-    background-color: rgb(239, 136, 105);
-    color: #FFFFFF;
+.logout-button:hover {
+    background-color: #f2f2f2;
+    color: #CCC;
     transition: all 0.4s ease-in-out;
 }
 

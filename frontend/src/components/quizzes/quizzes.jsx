@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import QuizListItem from './quiz_list_item';
-
+import NavBar from '../nav/navbar_container';
 class Quiz extends React.Component {
     constructor(props){
         super(props);
@@ -25,6 +25,7 @@ class Quiz extends React.Component {
             
             return (
                 <div className="quizzes-container">
+                    <NavBar />
                     <h2>All Quizzes</h2>
                     {this.state.quizzes.map(quiz => (
                         <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>

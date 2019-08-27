@@ -14,6 +14,15 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     }
 
+    // componentWillMount(){
+    // let newClass = document.getElementsByClassName('session-container1');
+    // setTimeout(() => {
+    //     newClass[0].style.backgroundColor = "rgb(239, 136, 105)";
+        
+    // }, 1)
+
+    // }
+                
     sessionClickClose() {
         const ele = document.getElementById("session-errors");
         ele.style.display = "none";
