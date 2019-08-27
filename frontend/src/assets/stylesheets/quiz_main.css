@@ -44,6 +44,7 @@
     cursor: pointer;
     /* box-shadow: 1px 1px 1px 1px #ccc; */
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
 }
 
 .quiz-item:hover {
@@ -60,4 +61,17 @@
     text-transform: capitalize;
     color: #39424e;
     font-weight: 700;
+}
+
+.begin-quiz {
+    background: rgb(239, 136, 105);
+    border-color: rgb(239, 136, 105);
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 0 4px 12px 0 #e78c71;
+    border-radius: 4px;
+    width: 180px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 174px;
 }

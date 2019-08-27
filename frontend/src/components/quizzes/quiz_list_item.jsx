@@ -6,6 +6,7 @@ const QuizListItem = ({name, level}) => {
             <div className="quiz-item">
                 <h3 className="quiz-name">{name}</h3>
                 <h3>{level}</h3>
+                <button className="begin-quiz">Begin</button>
             </div>
         )
 }
