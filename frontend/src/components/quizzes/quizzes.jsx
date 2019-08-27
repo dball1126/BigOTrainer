@@ -26,13 +26,17 @@ class Quiz extends React.Component {
             return (
                 <div className="quizzes-container">
                     <NavBar />
+
                     <div className="quiz-title">
                         <h2>Time Compexity Quizzes</h2>
                     </div>
-
-                    {this.state.quizzes.map(quiz => (
-                        <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>
-                    ))}
+                    <div className="quiz-item-container">
+                        <div className="quiz-item-box">
+                            {this.state.quizzes.map(quiz => (
+                                <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             )
         }
