@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './session.css';
+@import './quiz_main.css';
 
 .homepage-container {
     font-size: 16px;
