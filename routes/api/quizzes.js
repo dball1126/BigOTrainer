@@ -19,27 +19,10 @@ router.get('/user/:user_id', (req, res) => {
     Quiz.find({user: req.params.user_id})
         .then(quizzes => res.json(quizzes))
         .catch(err => res.status(404).json({ noQuizFound: 'No Quizzes found from that user'}))
-})
+});
 
-router.get('/:id', (req, res) => {
-    // let id = req.params.quizid.toString();
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXX")
-    // console.log(req.params)
-    console.log("DDDDDDDDDDDDDDDD")
-    
-    Quiz.find({_id: ObjectId(req.params.id)})
-    .then(quiz => console.log(quiz))
-    // console.log(Quiz.find({ _id: ObjectId(req.params.id) }))    
-
-        .catch(err => res.status(404)).json({ noQuizFound: 'No Quiz found with that id'})
+router.get('/:id', (req, res) => { 
+    Quiz.find({_id: ObjectId(req.params.id)}).then(quiz => res.json(quiz)).catch(err => res.status(400).json({ noQuizzesFound: 'No quizzes found'}))
 });
 
 router.post('/homepage', 
