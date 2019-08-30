@@ -7,6 +7,7 @@ const Quiz = require('../../models/Quiz');
 const validateQuizInput = require('../../validation/quizzes')
 
 router.get('/', (req, res) => {
+    
     Quiz.find()
         .sort({ date: -1 })
         .then(quizzes => res.json(quizzes))
@@ -14,12 +15,16 @@ router.get('/', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
+    
     Quiz.find({user: req.params.user_id})
         .then(quizzes => res.json(quizzes))
         .catch(err => res.status(404).json({ noQuizFound: 'No Quizzes found from that user'}))
 })
 
 router.get('/:id', (req, res) => {
+    // let id = req.params.quizid.toString();
+    
+    
     Quiz.findById(req.params.id)
         .then(quiz => res.json(quiz))
         .catch(err => res.status(404)).json({ noQuizFound: 'No Quiz found with that id'})
@@ -28,6 +33,7 @@ router.get('/:id', (req, res) => {
 router.post('/homepage', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        
         const { errors, isValid} = validateQuizInput(req.body);
         
         if (!isValid) {

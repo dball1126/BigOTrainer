@@ -15,9 +15,10 @@ export const receiveQuiz = id => ({
     id
 })
 
-export const fetchQuiz = () => dispatch => {
+export const fetchQuiz = (id) => dispatch => {
+    debugger
     return (
-        getQuiz().then(id => dispatch(receiveQuiz(id))).catch(err => console.log(err))
+        getQuiz(id).then(id => dispatch(receiveQuiz(id))).catch(err => console.log(err))
     )
 }
 
