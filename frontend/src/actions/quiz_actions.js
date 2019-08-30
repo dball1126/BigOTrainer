@@ -10,15 +10,15 @@ export const receiveQuizzes = quizzes => ({
    
 });
 
-export const receiveQuiz = id => ({
+export const receiveQuiz = quiz => ({
     type: RECEIVE_QUIZ,
-    id
+    quiz
 })
 
 export const fetchQuiz = (id) => dispatch => {
-    debugger
+    
     return (
-        getQuiz(id).then(id => dispatch(receiveQuiz(id))).catch(err => console.log(err))
+        getQuiz(id).then(quiz => dispatch(receiveQuiz(quiz))).catch(err => console.log(err))
     )
 }
 
