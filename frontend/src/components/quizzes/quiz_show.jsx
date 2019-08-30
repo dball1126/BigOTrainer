@@ -13,13 +13,32 @@ import NavBar from '../nav/navbar_container';
          }
      }
 
+     handleSubmit(e) {
+         e.preventDefault();
+         let quiz = {
+             quiz: this.state.quiz
+         }
+
+     }
+
+     update() {
+         return e => this.setState({
+             text: e.currentTarget.value
+         });
+     }
+
      render(){
-        debugger
+        
         return (
             <div className="quiz-show-container">
                 <NavBar />
                 <div className="quiz-show-box">
-                    <h1>{this.state.quiz.name}</h1>
+                    <form className="quiz">
+                        <h1 className="quiz-show-name">{this.state.quiz.name}</h1>
+                        <span>{this.state.quiz.level}</span>
+                        
+                        <input type="submit" value="Submit" className="submit-quiz"/>
+                    </form>
                 </div>
             </div>
         )

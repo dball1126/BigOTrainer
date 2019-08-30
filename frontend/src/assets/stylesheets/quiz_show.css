@@ -1,3 +1,37 @@
 .quiz-show-container .session-container {
     background-color: rgb(239, 136, 105);
 }
+
+.quiz-show-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.quiz {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.quiz-show-name {
+    width: 300px;
+}
+
+.submit-quiz {
+    background: rgb(239, 136, 105);
+    border-color: rgb(239, 136, 105);
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 4px 12px 0 #e78c71;
+    border-radius: 4px;
+    width: 300px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 300px;
+    font-size: 30px;
+}

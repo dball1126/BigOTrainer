@@ -3,14 +3,14 @@ import {fetchQuiz} from '../../actions/quiz_actions';
 import { connect } from 'react-redux';
 
 const mapStatetoProps = (state, props) => {
-    debugger
+    
     let quiz;
     if (Object.keys(state.quizzes.data).length === 0 && state.quizzes.data.constructor === Object) {
         quiz = ""
     } else {
      quiz = state.quizzes.data;
     }
-    debugger
+    
     return {
         quiz: quiz
     }
