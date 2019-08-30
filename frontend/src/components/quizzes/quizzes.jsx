@@ -33,7 +33,7 @@ class Quiz extends React.Component {
                     <div className="quiz-item-container">
                         <div className="quiz-item-box">
                             {this.state.quizzes.map(quiz => (
-                                <QuizListItem key={quiz._id} name={quiz.name} level={quiz.date}/>
+                                <QuizListItem key={quiz._id} id={quiz._id} name={quiz.name} level={quiz.date}/>
                             ))}
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import { fetchQuizzes } from '../../actions/quiz_actions';
 import Quizzes from './quizzes';
 
 const mapStateToProps = (state) => {
-    
+    debugger
     return {
         quizzes: Object.values(state.quizzes.all)
     }
