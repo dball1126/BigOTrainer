@@ -34,9 +34,8 @@ import NavBar from '../nav/navbar_container';
                 <NavBar />
                 <div className="quiz-show-box">
                     <form className="quiz">
-                        <h1 className="quiz-show-name">{this.state.quiz.name}</h1>
-                        <span>{this.state.quiz.level}</span>
-                        
+                        <div className="quiz-show-name">{this.state.quiz.name}: Level {this.state.quiz.level}</div>
+
                         <input type="submit" value="Submit" className="submit-quiz"/>
                     </form>
                 </div>
