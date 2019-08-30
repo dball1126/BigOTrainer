@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 const QuizListItem = ({name, level, id}) => {
-      debugger
+      
         return (
             <div className="quiz-item">
                 <h3 className="quiz-name">{name}</h3>

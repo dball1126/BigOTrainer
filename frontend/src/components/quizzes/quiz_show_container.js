@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mapStatetoProps = (state, props) => {
     const quiz = ""
-    debugger
+    
     return {
         quiz: quiz
     }

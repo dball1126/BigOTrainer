@@ -13,7 +13,8 @@ import NavBar from '../nav/navbar_container';
      render(){
         
         return (
-            <div>
+            <div className="quiz-show-container">
+                <NavBar />
                 <h1>Quiz Show Component</h1>
             </div>
         )
