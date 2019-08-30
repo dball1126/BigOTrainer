@@ -5,6 +5,6 @@ export const getQuizzes = () => {
 };
 
 export const getQuiz = (id) => {
-    debugger
+    
     return axios.get(`/api/quizzes/${id}`)
 }

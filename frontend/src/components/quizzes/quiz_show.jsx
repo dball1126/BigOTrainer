@@ -8,7 +8,9 @@ import NavBar from '../nav/navbar_container';
      }
      componentWillMount(){
          debugger
-         this.props.fetchQuiz(this.state.quiz._id);
+         if (this.state.quiz === ""){
+            this.props.fetchQuiz(this.props.match.params.quizId);
+         }
      }
 
      render(){
