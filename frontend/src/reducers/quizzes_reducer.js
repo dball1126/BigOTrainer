@@ -1,4 +1,4 @@
-import {RECEIVE_QUIZZES} from '../actions/quiz_actions';
+import {RECEIVE_QUIZZES, RECEIVE_QUIZ} from '../actions/quiz_actions';
 
 const QuizzesReducer = (state = {all: {}, data: {}, user: {}, new: undefined}, action) => {
     
@@ -8,6 +8,9 @@ const QuizzesReducer = (state = {all: {}, data: {}, user: {}, new: undefined}, a
         case RECEIVE_QUIZZES:
             oldState.all = action.quizzes.data
             // return oldState;
+            return oldState;
+        case RECEIVE_QUIZ:
+            debugger
             return oldState;
         default:
             return oldState;
