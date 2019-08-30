@@ -7,10 +7,11 @@ const mapStatetoProps = (state, props) => {
     let quiz;
     if (Object.keys(state.quizzes.data).length === 0 && state.quizzes.data.constructor === Object) {
         quiz = ""
+        
     } else {
      quiz = state.quizzes.data;
     }
-    
+    debugger
     return {
         quiz: quiz
     }

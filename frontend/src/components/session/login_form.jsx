@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
         ele.style.display = "none";
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
             this.props.history.push('/quizzes');
         }

@@ -7,7 +7,7 @@ const QuestionSchema = new Schema({
         required: true
     },
     answer: {
-        type: String,
+        type: Boolean,
         required: true
     },
     date: {

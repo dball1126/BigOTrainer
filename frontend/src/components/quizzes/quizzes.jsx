@@ -10,11 +10,11 @@ class Quiz extends React.Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchQuizzes();
     }
 
-    componentWillReceiveProps(newState){
+    UNSAFE_componentWillReceiveProps(newState){
         this.setState({ quizzes: newState.quizzes})
     }
 

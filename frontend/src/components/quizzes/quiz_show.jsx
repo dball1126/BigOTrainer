@@ -6,7 +6,7 @@ import NavBar from '../nav/navbar_container';
          super(props);
          this.state = {quiz: this.props.quiz}
      }
-     componentWillMount(){
+     componentDidMount(){
          
          if (this.state.quiz === ""){
             this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({quiz: this.props.quiz}))
@@ -28,14 +28,16 @@ import NavBar from '../nav/navbar_container';
      }
 
      render(){
-        
+        const quiz = this.state.quiz;
         return (
             <div className="quiz-show-container">
                 <NavBar />
                 <div className="quiz-show-box">
                     <form className="quiz">
-                        <div className="quiz-show-name">{this.state.quiz.name}: Level {this.state.quiz.level}</div>
-
+                        <div className="quiz-show-name">{quiz.name}: Level {quiz.level}</div>
+                        <div className="explanation">
+                            {quiz.explanation}
+                        </div>
                         <input type="submit" value="Submit" className="submit-quiz"/>
                     </form>
                 </div>
