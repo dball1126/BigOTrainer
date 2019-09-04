@@ -43,3 +43,12 @@
     
     font-size: 30px;
 }
+
+.explanation {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.problem {
+    padding: 10px;
+}

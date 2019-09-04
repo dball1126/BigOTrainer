@@ -46,23 +46,31 @@ import NavBar from '../nav/navbar_container';
             question = this.state.questions[this.state.counter]
             this.state.counter++;
         } 
-        debugger
+        
         let explanation = ""
         let title = ""
         let options = [];
         let problem = "";
         if (question !== "" && question !== undefined) {
-            debugger
+            
             explanation = question.explanation;
             title = question.title;
             options = question.options;
             problem = question.problem;
         }
+        debugger
         return (
-            <div>
-                {title}
+            <div className="question-box">
+                <div className="explanation">
                 {explanation}
-                {problem}
+                </div>
+                <div className="problem">
+                {problem.split(",").map(line => (
+                    <div>
+                        {line}
+                    </div>
+                ))}
+                </div>
                 {options.map(option => (
                     <div>
                         {option.letter} : {option.title}
