@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
-import { fetchQuizzes } from '../../actions/quiz_actions';
+import { fetchQuizzes, fetchUserQuizzes } from '../../actions/quiz_actions';
 import Quizzes from './quizzes';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+    
     
     return {
-        quizzes: Object.values(state.quizzes.all)
+        quizzes: Object.values(state.quizzes.all),
+        currentUser: state.session.user.id || ""
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     
     return {
-        fetchQuizzes: () => dispatch(fetchQuizzes())
+        fetchQuizzes: () => dispatch(fetchQuizzes()),
+        fetchUserQuizzes: id => dispatch(fetchUserQuizzes(id))
     }
 }
 

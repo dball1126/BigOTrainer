@@ -3,43 +3,43 @@ const mongoose = require('mongoose');
 // const Quiz = require('../../models/Quiz');
 const Schema = mongoose.Schema;
 
-// const QuizSchema = new Schema({
-//     user: {
-//         type: Schema.Types.ObjectId,
-//         ref: 'users'
-//     },
-//     name: {
-//         type: String,
-//         required: true
-//     },
-//     level: {
-//         type: Number,
-//         required: true
-//     },
-//     date: {
-//         type: Date,
-//         default: Date.now
-//     }
-// })
+const QuizSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    level: {
+        type: Number,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+})
 
-// const AnswerSchema = new Schema({
-//     answer: {
-//         type: String,
-//         required: true
-//     },
-//     letter: {
-//         type: String,
-//         required: true
-//     },
-//     correct: {
-//         type: Boolean,
-//         required: true
-//     },
-//     date: {
-//         type: Date,
-//         default: Date.now
-//     }
-// })
+const AnswerSchema = new Schema({
+    answer: {
+        type: String,
+        required: true
+    },
+    letter: {
+        type: String,
+        required: true
+    },
+    correct: {
+        type: Boolean,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+})
 
 const UserSchema = new Schema({
     email: {
@@ -66,14 +66,8 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    quizzes: {
-        type: Schema.Types.ObjectId,
-        ref: 'Quiz'
-    },
-    answers: {
-        type: Schema.Types.ObjectId,
-        ref: 'Answer'
-    }
+    quizzes: [QuizSchema],
+    answers: [AnswerSchema]
 })
 
 module.exports = User = mongoose.model('users', UserSchema);

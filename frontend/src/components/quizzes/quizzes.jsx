@@ -11,7 +11,9 @@ class Quiz extends React.Component {
     }
 
     componentDidMount() {
+        
         this.props.fetchQuizzes();
+        this.props.fetchUserQuizzes(this.props.currentUser)
     }
 
     UNSAFE_componentWillReceiveProps(newState){

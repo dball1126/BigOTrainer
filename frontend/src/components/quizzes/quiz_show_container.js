@@ -11,7 +11,7 @@ const mapStatetoProps = (state, props) => {
     } else {
      quiz = state.quizzes.data;
     }
-    debugger
+    
     return {
         quiz: quiz
     }

@@ -1,7 +1,8 @@
-import { getQuizzes, getQuiz } from '../util/quiz_api_util';
+import { getQuizzes, getQuiz, getUserQuizzes } from '../util/quiz_api_util';
 
 export const RECEIVE_QUIZZES = "RECEIVE_QUIZZES";
 export const RECEIVE_QUIZ = "RECEIVE_QUIZ";
+export const RECEIVE_USER_QUIZZES = 'RECEIVE_USER_QUIZZES';
 
 export const receiveQuizzes = quizzes => ({
     
@@ -13,7 +14,19 @@ export const receiveQuizzes = quizzes => ({
 export const receiveQuiz = quiz => ({
     type: RECEIVE_QUIZ,
     quiz
-})
+});
+
+export const receiveUserQuizzes = quizzes => ({
+    type: RECEIVE_USER_QUIZZES,
+    quizzes
+});
+
+export const fetchUserQuizzes = (id) => dispatch => {
+    
+    return (
+    getUserQuizzes(id).then(quiz => dispatch(receiveUserQuizzes(quiz))).catch(err => console.log(err))
+    )
+};
 
 export const fetchQuiz = (id) => dispatch => {
     
