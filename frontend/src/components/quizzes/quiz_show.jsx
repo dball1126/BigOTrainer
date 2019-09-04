@@ -5,6 +5,7 @@ import NavBar from '../nav/navbar_container';
      constructor(props){
          super(props);
          this.state = {quiz: this.props.quiz}
+         //title, problem, explanation, answer
      }
      componentDidMount(){
          

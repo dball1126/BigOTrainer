@@ -6,6 +6,14 @@ const QuestionSchema = new Schema({
         type: String,
         required: true
     },
+    explanation: {
+        type: String,
+        required: true
+    },
+    problem: {
+        type: String,
+        required: true
+    },
     answer: {
         type: Boolean,
         required: true
@@ -13,6 +21,10 @@ const QuestionSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    options: {
+        type: Schema.Types.ObjectId,
+        ref: 'Option'
     }
 })
 
