@@ -4,14 +4,32 @@ import NavBar from '../nav/navbar_container';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
-         this.state = {quiz: this.props.quiz}
+         
+         this.state = {quiz: "",
+                        name: "",
+                        level: "",
+                        questions: "",
+                        counter: 0,
+                        questionId: 1,
+                        answerOptions: [],
+                        answer: '',
+                        answersCount: {},
+                        result: ''}
          //title, problem, explanation, answer
      }
      componentDidMount(){
          
          if (this.state.quiz === ""){
-            this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({quiz: this.props.quiz}))
+            this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({
+                name: this.props.quiz.name,
+                quiz: this.props.quiz,
+                level: this.props.quiz.level,
+                explanation: this.props.quiz.explanation,
+                questions: this.props.quiz.questions,}))
          }
+
+         
+         
      }
 
      handleSubmit(e) {
@@ -22,6 +40,40 @@ import NavBar from '../nav/navbar_container';
 
      }
 
+     renderQuestion(){
+         let question = "";
+        if (this.state.counter <= this.state.questions.length){
+            question = this.state.questions[this.state.counter]
+            this.state.counter++;
+        } 
+        debugger
+        let explanation = ""
+        let title = ""
+        let options = [];
+        let problem = "";
+        if (question !== "" && question !== undefined) {
+            debugger
+            explanation = question.explanation;
+            title = question.title;
+            options = question.options;
+            problem = question.problem;
+        }
+        return (
+            <div>
+                {title}
+                {explanation}
+                {problem}
+                {options.map(option => (
+                    <div>
+                        {option.letter} : {option.title}
+                        </div>
+                    
+                ))}
+            </div>
+         )
+     }
+
+
      update() {
          return e => this.setState({
              text: e.currentTarget.value
@@ -29,15 +81,19 @@ import NavBar from '../nav/navbar_container';
      }
 
      render(){
-        const quiz = this.state.quiz;
+        const level = this.state.level;
+        const name = this.state.name;
+        // const explanation = this.state.explanation;
+        
         return (
             <div className="quiz-show-container">
                 <NavBar />
                 <div className="quiz-show-box">
                     <form className="quiz">
-                        <div className="quiz-show-name">{quiz.name}: Level {quiz.level}</div>
+                        <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="explanation">
-                            {quiz.explanation}
+                            {/* {explanation} */}
+                            {this.renderQuestion()}
                         </div>
                         <input type="submit" value="Submit" className="submit-quiz"/>
                     </form>
