@@ -32,6 +32,8 @@ import NavBar from '../nav/navbar_container';
          
      }
 
+
+
      handleSubmit(e) {
          e.preventDefault();
          let quiz = {
@@ -44,7 +46,6 @@ import NavBar from '../nav/navbar_container';
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
-            this.state.counter++;
         } 
         
         let explanation = ""
@@ -89,6 +90,17 @@ import NavBar from '../nav/navbar_container';
                 </div>
             </div>
          )
+     }
+
+     setNextQuestion(){
+         const counter = this.state.counter + 1;
+         const questionId = this.state.questionId + 1;
+
+         this.setState({
+             counter: counter,
+             questionId: questionId,
+             question: this.state.questions[counter]
+         })
      }
 
 
