@@ -78,7 +78,8 @@ import NavBar from '../nav/navbar_container';
                         <label>
                         <input type="radio"
                                className="option-radio"
-                               value={option.letter}/>
+                               value={option.letter}
+                               onChange={this.update(this.state.answer)}/>
                             &nbsp; &nbsp;
                             <span className="letter-title"> 
                                 {option.letter} : {option.title}
@@ -93,6 +94,7 @@ import NavBar from '../nav/navbar_container';
      }
 
      setNextQuestion(){
+
          const counter = this.state.counter + 1;
          const questionId = this.state.questionId + 1;
 
@@ -101,6 +103,13 @@ import NavBar from '../nav/navbar_container';
              questionId: questionId,
              question: this.state.questions[counter]
          })
+
+     }
+     
+     handleAnswer(event){
+        this.setState({answer: event.currentTarget.value})
+        this.setNextQuestion();
+
      }
 
 
@@ -114,7 +123,7 @@ import NavBar from '../nav/navbar_container';
         const level = this.state.level;
         const name = this.state.name;
         // const explanation = this.state.explanation;
-        
+        console.log(this.state.counter)
         return (
             <div className="quiz-show-container">
                 <NavBar />
@@ -122,7 +131,7 @@ import NavBar from '../nav/navbar_container';
                     <h2>Time Complexity / Runtime Analysis</h2>
                 </div>
                 <div className="quiz-show-box">
-                    <form className="quiz">
+                    <form className="quiz" onSubmit={() => this.setNextQuestion()}>
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
