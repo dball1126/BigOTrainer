@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
+import { set } from 'mongoose';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -15,7 +16,8 @@ import NavBar from '../nav/navbar_container';
                         answer: '',
                         answersCount: {},
                         result: '',
-                        showData: this.displayData}
+                        showData: this.displayData,
+                        selectedOption: ""}
          //title, problem, explanation, answer
          this.appendData = this.appendData.bind(this);
         //  this.displayData = this.displayData.bind(this);
@@ -55,6 +57,12 @@ import NavBar from '../nav/navbar_container';
          }
 
      }
+     handleOptionChange = changeEvent => {
+         this.setState({
+             selectedOption: changeEvent.target.value
+         });
+     };
+
 
      renderQuestion(){
          let question = "";
@@ -93,6 +101,8 @@ import NavBar from '../nav/navbar_container';
                         <input type="radio"
                                className="option-radio"
                                value={option.letter}
+                                checked={this.state.selectedOption === option.letter}
+                                onClick={this.handleOptionChange}
                                onChange={this.update('result')}
                                id="option-radio-id"/>
                         <label htmlFor="option-radio-id">
@@ -119,13 +129,16 @@ import NavBar from '../nav/navbar_container';
          if(this.state.result === this.state.answer) {
             this.state.showData.push(<div className="modal-answer"><span>Message</span></div>)
          }
-
+         if (counter < this.state.questions.length) {
+            setTimeout( () => { 
          this.setState({
              counter: counter,
              questionId: questionId,
-             question: this.state.questions[counter]
+             question: this.state.questions[counter],
+             selectedOption: ""
          })
-         debugger
+        }, 300)
+        }
 
      }
      
