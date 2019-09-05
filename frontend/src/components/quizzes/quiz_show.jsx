@@ -4,7 +4,7 @@ import NavBar from '../nav/navbar_container';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
-         
+         this.displayData = [];
          this.state = {quiz: "",
                         name: "",
                         level: "",
@@ -14,9 +14,17 @@ import NavBar from '../nav/navbar_container';
                         answerOptions: [],
                         answer: '',
                         answersCount: {},
-                        result: ''}
+                        result: '',
+                        showData: this.displayData}
          //title, problem, explanation, answer
+         this.appendData = this.appendData.bind(this);
+        //  this.displayData = this.displayData.bind(this);
      }
+
+     appendData(){
+
+     }
+
      componentDidMount(){
          
          if (this.state.quiz === ""){
@@ -109,7 +117,7 @@ import NavBar from '../nav/navbar_container';
          const questionId = this.state.questionId + 1;
         
          if(this.state.result === this.state.answer) {
-
+            this.state.showData.push(<div className="modal-answer"><span>Message</span></div>)
          }
 
          this.setState({
@@ -135,11 +143,11 @@ import NavBar from '../nav/navbar_container';
      }
 
      render(){
-         debugger
+         
         const level = this.state.level;
         const name = this.state.name;
-        // const explanation = this.state.explanation;
-        console.log(this.state.counter)
+        
+        
         return (
             <div className="quiz-show-container">
                 <NavBar />
@@ -147,8 +155,8 @@ import NavBar from '../nav/navbar_container';
                     <h2>Time Complexity / Runtime Analysis</h2>
                 </div>
                 <div className="quiz-show-box">
-                    <div className="modal-answer">
-                        <span className="result-modal">MESSAGE</span>
+                    <div id="result-modal">
+                        {this.displayData}
                     </div>
                     <form className="quiz" onSubmit={() => this.setNextQuestion()} >
                         <div className="quiz-show-name">{name}: Level {level}</div>
