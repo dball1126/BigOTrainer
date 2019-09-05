@@ -106,6 +106,9 @@ import NavBar from '../nav/navbar_container';
         return (
             <div className="quiz-show-container">
                 <NavBar />
+                <div className = "quiz-title-show">
+                    <h2>Time Complexity / Runtime Analysis</h2>
+                </div>
                 <div className="quiz-show-box">
                     <form className="quiz">
                         <div className="quiz-show-name">{name}: Level {level}</div>
