@@ -2,7 +2,7 @@
 @import './session.css';
 @import './quiz_main.css';
 @import './quiz_show.css';
-
+@import './modals.css';
 
 .homepage-container {
     font-size: 16px;

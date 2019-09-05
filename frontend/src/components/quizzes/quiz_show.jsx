@@ -38,6 +38,10 @@ import NavBar from '../nav/navbar_container';
 
      handleSubmit(e) {
          e.preventDefault();
+        //  debugger
+        //  if (this.state.counter < this.state.questions.length){
+        //      return this.setNextQuestion();
+        //  }
          let quiz = {
              quiz: this.state.quiz
          }
@@ -75,13 +79,15 @@ import NavBar from '../nav/navbar_container';
                 ))}
                 </div>
                 <div className="options-box">
+                    {/* <form type="submit" onSubmit={this.handleSubmit}> */}
                 {options.map(option => (
                     <div className="options">
-                        <label>
                         <input type="radio"
                                className="option-radio"
                                value={option.letter}
-                               onChange={this.update(this.state.answer)}/>
+                               onChange={this.update('result')}
+                               id="option-radio-id"/>
+                        <label htmlFor="option-radio-id">
                             &nbsp; &nbsp;
                             <span className="letter-title"> 
                                 {option.letter} : {option.title}
@@ -90,15 +96,21 @@ import NavBar from '../nav/navbar_container';
                         </div>
                     
                 ))}
+
+                    {/* </form> */}
                 </div>
             </div>
          )
      }
 
      setNextQuestion(){
-
+            debugger
          const counter = this.state.counter + 1;
          const questionId = this.state.questionId + 1;
+        
+         if(this.state.result === this.state.answer) {
+
+         }
 
          this.setState({
              counter: counter,
@@ -116,10 +128,10 @@ import NavBar from '../nav/navbar_container';
      }
 
 
-     update() {
-         return e => this.setState({
-             text: e.currentTarget.value
-         });
+     update(field) {
+         return (e) => {
+             this.setState({ [field]: e.target.value })
+         }
      }
 
      render(){
@@ -135,7 +147,10 @@ import NavBar from '../nav/navbar_container';
                     <h2>Time Complexity / Runtime Analysis</h2>
                 </div>
                 <div className="quiz-show-box">
-                    <form className="quiz" onSubmit={() => this.setNextQuestion()}>
+                    <div className="modal-answer">
+                        <span className="result-modal">MESSAGE</span>
+                    </div>
+                    <form className="quiz" onSubmit={() => this.setNextQuestion()} >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
