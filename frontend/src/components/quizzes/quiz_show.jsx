@@ -58,7 +58,7 @@ import NavBar from '../nav/navbar_container';
             options = question.options;
             problem = question.problem;
         }
-        debugger
+        
         return (
             <div className="question-box">
                 <div className="explanation">
@@ -71,12 +71,22 @@ import NavBar from '../nav/navbar_container';
                     </div>
                 ))}
                 </div>
+                <div className="options-box">
                 {options.map(option => (
-                    <div>
-                        {option.letter} : {option.title}
+                    <div className="options">
+                        <label>
+                        <input type="radio"
+                               className="option-radio"
+                               value={option.letter}/>
+                            &nbsp; &nbsp;
+                            <span className="letter-title"> 
+                                {option.letter} : {option.title}
+                            </span>
+                        </label>
                         </div>
                     
                 ))}
+                </div>
             </div>
          )
      }
