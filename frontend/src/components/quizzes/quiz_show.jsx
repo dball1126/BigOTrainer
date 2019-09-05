@@ -25,7 +25,9 @@ import NavBar from '../nav/navbar_container';
                 quiz: this.props.quiz,
                 level: this.props.quiz.level,
                 explanation: this.props.quiz.explanation,
-                questions: this.props.quiz.questions,}))
+                questions: this.props.quiz.questions,
+                answer: this.props.quiz.questions[0].answer}))
+                
          }
 
          
@@ -103,6 +105,7 @@ import NavBar from '../nav/navbar_container';
              questionId: questionId,
              question: this.state.questions[counter]
          })
+         debugger
 
      }
      
@@ -120,6 +123,7 @@ import NavBar from '../nav/navbar_container';
      }
 
      render(){
+         debugger
         const level = this.state.level;
         const name = this.state.name;
         // const explanation = this.state.explanation;

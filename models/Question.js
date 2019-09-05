@@ -15,7 +15,9 @@ const QuestionSchema = new Schema({
         required: true
     },
     answer: {
-        type: Boolean,
+        // type: Boolean,
+        // required: true
+        type: String,
         required: true
     },
     date: {
