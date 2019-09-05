@@ -109,7 +109,7 @@ import NavBar from '../nav/navbar_container';
                 <div className="quiz-show-box">
                     <form className="quiz">
                         <div className="quiz-show-name">{name}: Level {level}</div>
-                        <div className="explanation">
+                        <div className="render-question">
                             {/* {explanation} */}
                             {this.renderQuestion()}
                         </div>
