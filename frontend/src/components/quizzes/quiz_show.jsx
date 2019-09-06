@@ -126,9 +126,14 @@ import { set } from 'mongoose';
          const counter = this.state.counter + 1;
          const questionId = this.state.questionId + 1;
         
-         if(this.state.result === this.state.answer) {
-            this.state.showData.push(<div className="modal-answer"><span>Message</span></div>)
-         }
+         if (this.state.answer !== ""){
+            if(this.state.result === this.state.answer) {
+                this.state.showData.push(<div className="modal-answer-good"><span>Correct!</span></div>)
+            }   else {
+                this.state.showData.push(<div className="modal-answer-bad"><span>Incorrect!</span></div>)
+            }
+        }
+
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
          this.setState({

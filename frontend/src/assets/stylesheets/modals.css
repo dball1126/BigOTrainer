@@ -1,4 +1,4 @@
-.modal-answer{
+.modal-answer-good{
     width: 200px;
     margin-left: 800px;
     height: 50px;
@@ -11,6 +11,23 @@
     font-family: sans-serif;
     font-weight: 700;
     margin-top: 100px;
+    color: #FFFFFF;
+}
+
+.modal-answer-bad{
+     width: 200px;
+    margin-left: 800px;
+    height: 50px;
+    padding-top: 50px;
+    position: absolute;
+    text-align: center;
+    background-color: pink;
+    margin-right: 300px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-top: 100px;
+    color: Black;
 }
 
 .result-modal{
