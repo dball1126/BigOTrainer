@@ -88,16 +88,16 @@ import { set } from 'mongoose';
                 {explanation}
                 </div>
                 <div className="problem">
-                {problem.split(",").map(line => (
-                    <div>
+                {problem.split(",").map((line, i) => (
+                    <div key={i}>
                         {line}
                     </div>
                 ))}
                 </div>
                 <div className="options-box">
                     {/* <form type="submit" onSubmit={this.handleSubmit}> */}
-                {options.map(option => (
-                    <div className="options">
+                {options.map((option, i) => (
+                    <div className="options" key={i}>
                         <input type="radio"
                                className="option-radio"
                                value={option.letter}
