@@ -163,7 +163,7 @@ import { set } from 'mongoose';
 
              }, 1000)
              setTimeout(() => {
-                 if (this.state.answerOptions.length > 3) {
+                 if (this.state.answerOptions.length >= 3) {
                      this.state.showData.push(<div className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
                  } else {
                      this.state.showData.push(<div className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
@@ -172,9 +172,9 @@ import { set } from 'mongoose';
              }, 1100)
 
             
-            // setTimeout(() => {
-            //     this.props.history.push('/quizzes');
-            // }, 2000)
+            setTimeout(() => {
+                this.props.history.push('/quizzes');
+            }, 3000)
         }
      }
      
