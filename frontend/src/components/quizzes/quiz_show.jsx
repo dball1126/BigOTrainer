@@ -129,11 +129,13 @@ import { set } from 'mongoose';
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
                 this.state.showData.push(<div className="modal-answer-good"><span>Correct!</span></div>)
+                this.state.answerOptions.push(1)
             }   else {
                 this.state.showData.push(<div className="modal-answer-bad"><span>Incorrect!</span></div>)
             }
+            this.setState({showData: this.displayData})
         }
-
+        
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
                 
@@ -152,6 +154,27 @@ import { set } from 'mongoose';
             })
 
         }, 1000)
+        } else {
+             setTimeout(() => {
+                 this.displayData = [];
+                 this.setState({
+                     showData: this.displayData
+                 })
+
+             }, 1000)
+             setTimeout(() => {
+                 if (this.state.answerOptions.length > 3) {
+                     this.state.showData.push(<div className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
+                 } else {
+                     this.state.showData.push(<div className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
+                 }
+                 this.setState({ showData: this.displayData })
+             }, 1100)
+
+            
+            // setTimeout(() => {
+            //     this.props.history.push('/quizzes');
+            // }, 2000)
         }
      }
      
@@ -180,10 +203,10 @@ import { set } from 'mongoose';
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>
                 </div>
-                <div className="quiz-show-box">
                     <div id="result-modal">
                         {this.displayData}
                     </div>
+                <div className="quiz-show-box">
                     <form className="quiz" onSubmit={() => this.setNextQuestion()} >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
