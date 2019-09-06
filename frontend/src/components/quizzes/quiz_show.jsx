@@ -122,7 +122,7 @@ import { set } from 'mongoose';
      }
 
      setNextQuestion(){
-            debugger
+            
          const counter = this.state.counter + 1;
          const questionId = this.state.questionId + 1;
         
@@ -136,15 +136,23 @@ import { set } from 'mongoose';
 
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
+                
          this.setState({
              counter: counter,
              questionId: questionId,
              question: this.state.questions[counter],
              selectedOption: ""
          })
+         
         }, 300)
-        }
+        setTimeout(() => {
+            this.displayData = [];
+            this.setState({
+                showData: this.displayData
+            })
 
+        }, 1000)
+        }
      }
      
      handleAnswer(event){
