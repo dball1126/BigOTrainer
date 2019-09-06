@@ -128,10 +128,10 @@ import { set } from 'mongoose';
         
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
-                this.state.showData.push(<div className="modal-answer-good"><span>Correct!</span></div>)
+                this.state.showData.push(<div key={Date.now()} className="modal-answer-good"><span>Correct!</span></div>)
                 this.state.answerOptions.push(1)
             }   else {
-                this.state.showData.push(<div className="modal-answer-bad"><span>Incorrect!</span></div>)
+                this.state.showData.push(<div key={Date.now()} className="modal-answer-bad"><span>Incorrect!</span></div>)
             }
             this.setState({showData: this.displayData})
         }
@@ -164,9 +164,9 @@ import { set } from 'mongoose';
              }, 1000)
              setTimeout(() => {
                  if (this.state.answerOptions.length >= 3) {
-                     this.state.showData.push(<div className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
+                     this.state.showData.push(<div key={Date.now()} className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
                  } else {
-                     this.state.showData.push(<div className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
+                     this.state.showData.push(<div key={Date.now()} className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
                  }
                  this.setState({ showData: this.displayData })
              }, 1100)
@@ -176,6 +176,7 @@ import { set } from 'mongoose';
                 this.props.history.push('/quizzes');
             }, 3000)
         }
+        
      }
      
      handleAnswer(event){
