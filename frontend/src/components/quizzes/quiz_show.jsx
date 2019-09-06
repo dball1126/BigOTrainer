@@ -18,13 +18,6 @@ import { set } from 'mongoose';
                         result: '',
                         showData: this.displayData,
                         selectedOption: ""}
-         //title, problem, explanation, answer
-         this.appendData = this.appendData.bind(this);
-        //  this.displayData = this.displayData.bind(this);
-     }
-
-     appendData(){
-
      }
 
      componentDidMount(){
@@ -38,13 +31,8 @@ import { set } from 'mongoose';
                 questions: this.props.quiz.questions,
                 answer: this.props.quiz.questions[0].answer}))
                 
-         }
-
-         
-         
+         } 
      }
-
-
 
      handleSubmit(e) {
          e.preventDefault();
@@ -143,7 +131,8 @@ import { set } from 'mongoose';
              counter: counter,
              questionId: questionId,
              question: this.state.questions[counter],
-             selectedOption: ""
+             selectedOption: "",
+             answer: this.props.quiz.questions[counter].answer
          })
          
         }, 300)
