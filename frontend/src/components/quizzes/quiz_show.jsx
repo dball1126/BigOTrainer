@@ -78,7 +78,9 @@ import { set } from 'mongoose';
                 <div className="problem">
                 {problem.split(",").map((line, i) => (
                     <div key={i}>
-                        {line}
+                        <div className="problem-start">{(i === 0 ? line : "")}</div>
+                        &nbsp; &nbsp;&nbsp; &nbsp;{(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
+                        <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div>
                     </div>
                 ))}
                 </div>
