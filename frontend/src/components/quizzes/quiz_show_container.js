@@ -1,5 +1,5 @@
 import Quiz from './quiz_show';
-import {fetchQuiz} from '../../actions/quiz_actions';
+import {fetchQuiz, composeQuiz} from '../../actions/quiz_actions';
 import { connect } from 'react-redux';
 
 const mapStatetoProps = (state, props) => {
@@ -19,7 +19,8 @@ const mapStatetoProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchQuiz: (id) => dispatch(fetchQuiz(id))
+        fetchQuiz: (id) => dispatch(fetchQuiz(id)),
+        composeQuiz: (data) => dispatch(composeQuiz(data))
     }
 }
 
