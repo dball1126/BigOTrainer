@@ -12,5 +12,11 @@ export const getQuiz = (id) => {
 //get user quizzes
 
 export const getUserQuizzes = id => {
-    return axios.get(`/api/quizzes/user/${id}`)
+    return axios.get(`/api/quizzes/user/${id}`);
 };
+
+// post quiz
+
+export const postQuiz = data => {
+    return axios.get(`/api/quizzes/`, data);
+}
