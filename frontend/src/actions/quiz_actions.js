@@ -1,4 +1,4 @@
-import { getQuizzes, getQuiz, getUserQuizzes } from '../util/quiz_api_util';
+import { getQuizzes, getQuiz, getUserQuizzes, postQuiz } from '../util/quiz_api_util';
 
 export const RECEIVE_QUIZZES = "RECEIVE_QUIZZES";
 export const RECEIVE_QUIZ = "RECEIVE_QUIZ";
@@ -41,3 +41,9 @@ export const fetchQuizzes = () => dispatch => {
     getQuizzes().then(quizzes => dispatch(receiveQuizzes(quizzes))).catch(err => console.log(err))
     )
 }
+
+export const componseQuiz = data => dispatch => (
+    postQuiz(data)
+        .then(quiz => dispatch(receiveQuiz(quiz)))
+        .catch(err => console.log(err))
+)
