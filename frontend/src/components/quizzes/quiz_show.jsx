@@ -18,6 +18,7 @@ import { set } from 'mongoose';
                         result: '',
                         showData: this.displayData,
                         selectedOption: ""}
+        this.handleSubmit = this.handleSubmit.bind(this);
      }
 
      componentDidMount(){
@@ -34,16 +35,18 @@ import { set } from 'mongoose';
          } 
      }
 
-     handleSubmit(e) {
-         e.preventDefault();
-        //  debugger
-        //  if (this.state.counter < this.state.questions.length){
-        //      return this.setNextQuestion();
-        //  }
+     handleSubmit() {
+         
+         
+        debugger
          let quiz = {
-             quiz: this.state.quiz
+             quiz: this.state.quiz,
+             id: this.props.id,
+             answerOptions: this.state.answerOptions
          }
-
+         
+         this.props.composeQuiz(quiz)
+         debugger
      }
      handleOptionChange = changeEvent => {
          this.setState({
@@ -164,7 +167,8 @@ import { set } from 'mongoose';
 
             
             setTimeout(() => {
-                this.props.history.push('/quizzes');
+                this.handleSubmit()
+                // this.props.history.push('/quizzes');
             }, 3000)
         }
         
@@ -199,7 +203,7 @@ import { set } from 'mongoose';
                         {this.displayData}
                     </div>
                 <div className="quiz-show-box">
-                    <form className="quiz" onSubmit={() => this.setNextQuestion()} >
+                    <form className="quiz" type="post"  onSubmit={() => this.setNextQuestion()} >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}

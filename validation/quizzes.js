@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function(data) {
     let errors = {};
-
+    
     data.name = validText(data.name) ? data.name : '';
 
     if (!Validator.isLength(data.name, {min: 5, max: 20})) {

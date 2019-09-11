@@ -43,6 +43,7 @@ export const fetchQuizzes = () => dispatch => {
 }
 
 export const composeQuiz = data => dispatch => (
+    
     postQuiz(data)
         .then(quiz => dispatch(receiveQuiz(quiz)))
         .catch(err => console.log(err))

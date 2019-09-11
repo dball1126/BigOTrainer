@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 const mapStatetoProps = (state, props) => {
     
     let quiz;
+    let id = state.session.user.id || {};
     if (Object.keys(state.quizzes.data).length === 0 && state.quizzes.data.constructor === Object) {
         quiz = ""
         
@@ -13,7 +14,8 @@ const mapStatetoProps = (state, props) => {
     }
     
     return {
-        quiz: quiz
+        quiz: quiz,
+        id: id
     }
 }
 
