@@ -1,5 +1,5 @@
 import Quiz from './quiz_show';
-import {fetchQuiz, composeQuiz} from '../../actions/quiz_actions';
+import { fetchQuiz, composeQuiz} from '../../actions/quiz_actions';
 import { connect } from 'react-redux';
 
 const mapStatetoProps = (state, props) => {

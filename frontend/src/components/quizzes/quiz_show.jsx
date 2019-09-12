@@ -45,7 +45,7 @@ import { set } from 'mongoose';
              answerOptions: this.state.answerOptions
          }
          
-         this.props.composeQuiz(quiz)
+         this.props.composeQuiz(quiz).then(this.props.history.push(`/quizzes`))
          debugger
      }
      handleOptionChange = changeEvent => {

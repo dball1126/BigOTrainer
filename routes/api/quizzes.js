@@ -52,6 +52,8 @@ router.post('/:id', passport.authenticate('jwt', { session: false }),
     // Quiz.save({_id: ObjectId(req.params.id)}).then(quiz => res.json(quiz)).catch(err => res.status(400).json({ noQuizzesFound: 'No quizzes found'}))
 });
 
+
+
 router.post('/homepage', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {

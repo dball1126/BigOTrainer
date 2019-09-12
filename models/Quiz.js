@@ -63,6 +63,14 @@ const QuizSchema = new Schema({
         type: Number,
         required: true
     },
+    quiz: {
+        type: Schema.Types.ObjectId,
+        ref: 'quizzes'
+    },
+    master: {
+        type: Boolean,
+        default: false
+    },
     date: {
         type: Date,
         default: Date.now
