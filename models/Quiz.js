@@ -71,6 +71,10 @@ const QuizSchema = new Schema({
         type: Boolean,
         default: false
     },
+    score: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         default: Date.now

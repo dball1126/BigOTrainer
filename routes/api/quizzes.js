@@ -39,9 +39,10 @@ router.post('/:id', passport.authenticate('jwt', { session: false }),
 
             name: req.body.quiz.name,
             level: req.body.quiz.level,
-            user_id: req.body.id,
-            answerOptions: req.body.answerOptions
-
+            quiz: req.body.quiz._id,
+            answerOptions: req.body.answerOptions,
+            user: req.body.id
+            
         });  
         newQuiz.save().then(quiz => res.json(quiz));
     
