@@ -5,7 +5,7 @@ import Quizzes from './quizzes';
 const mapStateToProps = (state, props) => {
    
     return {
-        quizzes: Object.values(state.quizzes.all).filter(quiz => quiz.user === undefined),
+        quizzes: Object.values(state.quizzes.all).filter(quiz => quiz.master === true),
         currentUser: state.session.user.id || ""
     }
 }
