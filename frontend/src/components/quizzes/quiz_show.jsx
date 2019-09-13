@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { set } from 'mongoose';
+
 // import hljs from 'highlight.js';
  class QuizShow extends React.Component{
      constructor(props){
@@ -75,6 +76,7 @@ import { set } from 'mongoose';
         }
        
         
+        
         return (
             <div className="question-box">
                 <div className="explanation">
@@ -82,6 +84,7 @@ import { set } from 'mongoose';
                 </div>
                 
                 <div className="problem">
+                   
                 
                 {problem.split(",").map((line, i) => (
                     
@@ -98,6 +101,7 @@ import { set } from 'mongoose';
                         </pre>
                     </div>
                 ))}
+              
                
                 </div>
                 
@@ -210,6 +214,8 @@ import { set } from 'mongoose';
         
         return (
             <div className="quiz-show-container">
+                <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css" />
+
                 <NavBar />
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>
