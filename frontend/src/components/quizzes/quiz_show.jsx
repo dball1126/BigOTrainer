@@ -38,7 +38,7 @@ import { set } from 'mongoose';
      handleSubmit() {
          
          
-        debugger
+        
          let quiz = {
              quiz: this.state.quiz,
              id: this.props.id,
@@ -46,7 +46,7 @@ import { set } from 'mongoose';
          }
          
          this.props.composeQuiz(quiz).then(this.props.history.push(`/quizzes`))
-         debugger
+         
      }
      handleOptionChange = changeEvent => {
          this.setState({
@@ -78,15 +78,24 @@ import { set } from 'mongoose';
                 <div className="explanation">
                 {explanation}
                 </div>
+                
                 <div className="problem">
+                {/* <pre>
+                <code data-lang="Javascript"> */}
                 {problem.split(",").map((line, i) => (
                     <div key={i}>
                         <div className="problem-start">{(i === 0 ? line : "")}</div>
+                        <pre className={`pre${i}`}>
                         &nbsp; &nbsp;&nbsp; &nbsp;{(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
+                        </pre>
                         <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div>
                     </div>
                 ))}
+                {/* </code>
+                </pre> */}
                 </div>
+                
+                
                 <div className="options-box">
                     {/* <form type="submit" onSubmit={this.handleSubmit}> */}
                 {options.map((option, i) => (

@@ -104,3 +104,115 @@
 .problem-start {
     padding-left: 10px;
 }
+
+
+/* .pre, code {
+  font-family: monospace, monospace;
+}
+.pre {
+    overflow: auto;
+  background-color: #FCFDFC;
+  background-repeat: repeat-y;
+  background-position: 0 -1rem;
+  background-size: auto 4rem;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg stroke-width='2' stroke='%23EDF3ED' width='1224' height='64' viewBox='0 0 1224 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0L1224,0'/%3E%3Cpath d='M0,4l1224,0'/%3E%3Cpath d='M0,8l1224,0'/%3E%3Cpath d='M0,12l1224,0'/%3E%3Cpath d='M0,16l1224,0'/%3E%3Cpath d='M0,20l1224,0'/%3E%3Cpath d='M0,24l1224,0'/%3E%3Cpath d='M0,28l1224,0'/%3E%3C/svg%3E");
+}
+.pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: 0 1px #fff;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  -moz-tab-size: 2; -o-tab-size: 2; tab-size: 2;
+  -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none;
+}
+
+pre > code[class]::before {
+  content: attr(class);
+  display: block;
+  font-size: small;
+  font-style: italic;
+  color: #6c5f7c;
+  margin: -.4rem 0 .6rem -1.2rem
+}
+
+.pre {
+  overflow: hidden;
+  resize: horizontal;
+  min-width: 100%
+} */
+
+.pre1 {
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.pre2 {
+padding-left: 15px;
+padding-bottom: 5px;
+}
+
+.pre3 {
+padding-left: 25px;
+padding-bottom: 5px;
+}
+
+.pre4 {
+padding-left: 35px;
+padding-bottom: 5px;
+}
+
+.pre5 {
+padding-left: 45px;
+padding-bottom: 5px;
+}
+
+.pre6 {
+padding-left: 55px;
+padding-bottom: 5px;
+}
+
+.pre7 {
+padding-left: 65px;
+padding-bottom: 5px;
+
+}
+
+.pre8 {
+padding-left: 55px;
+padding-bottom: 5px;
+
+}
+
+.pre9 {
+padding-left: 45px;
+padding-bottom: 5px;
+
+}
+
+.pre10 {
+    padding-left: 35px;
+padding-bottom: 5px;
+
+}
+
+.pre11 {
+    padding-left: 25px;
+padding-bottom: 5px;
+
+}
+.pre12 {
+    padding-left: 15px;
+padding-bottom: 5px;
+
+}
