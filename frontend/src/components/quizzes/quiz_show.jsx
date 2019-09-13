@@ -86,7 +86,9 @@ import { set } from 'mongoose';
                     <div key={i}>
                         <div className="problem-start">{(i === 0 ? line : "")}</div>
                         <pre className={`pre${i}`}>
-                        &nbsp; &nbsp;&nbsp; &nbsp;{(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
+                        
+                        {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
+                        
                         </pre>
                         <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div>
                     </div>
