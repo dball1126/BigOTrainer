@@ -5,7 +5,9 @@ export const Component2 = () => {
     const codeString = '(num) => num + 1';
     return (
         <SyntaxHighlighter language="javascript" style={docco}>
+            <lineNumberStyle>
             {codeString}
+            </lineNumberStyle>
         </SyntaxHighlighter>
     );
 };

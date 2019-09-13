@@ -4,7 +4,7 @@ import NavBar from '../nav/navbar_container';
 import { set } from 'mongoose';
 // import { Component2   } from './highlighter';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // import React from 'react';
 // import hljs from 'highlight.js';
  class QuizShow extends React.Component{
@@ -94,13 +94,14 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
                     <div key={i}>
                         <pre className={`pre${i}`}>
                         <code className="html">
-                        <div className="problem-start">{(i === 0 ? line : "")}</div>
+                                <SyntaxHighlighter language="javascript" style={dark}  >
+                        {/* <div className="problem-start">{(i === 0 ? line : "")}</div> */}
                         
-                                <SyntaxHighlighter language="javascript" style={docco}>
-                        {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
+                        {/* {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""} */}
+                        {line}
+                        {/* {line} */}
+                        {/* <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div> */}
                         </SyntaxHighlighter>
-                        
-                        <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div>
                             </code>
                         </pre>
                     </div>

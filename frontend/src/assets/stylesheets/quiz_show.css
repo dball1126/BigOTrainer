@@ -59,7 +59,7 @@
 
 .problem {
     padding: 10px;
-    background-color: #f7f7f7;
+    background-color: rgb(68, 68, 68);;
     font-family: Oswald;
     font-size: 21px;
 }
@@ -158,65 +158,65 @@ pre > code[class]::before {
 .pre1 {
     padding-top: 10px;
     padding-left: 10px;
-    padding-bottom: 5px;
+    margin-bottom: -10px;
 }
 
 .pre2 {
 padding-left: 15px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 }
 
 .pre3 {
 padding-left: 25px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 }
 
 .pre4 {
 padding-left: 35px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 }
 
 .pre5 {
 padding-left: 45px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 }
 
 .pre6 {
 padding-left: 55px;
-padding-bottom: 5px;
+/* margin-bottom: -10px; */
 }
 
 .pre7 {
 padding-left: 65px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
 
 .pre8 {
 padding-left: 55px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
 
 .pre9 {
 padding-left: 45px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
 
 .pre10 {
     padding-left: 35px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
 
 .pre11 {
     padding-left: 25px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
 .pre12 {
     padding-left: 15px;
-padding-bottom: 5px;
+margin-bottom: -10px;
 
 }
