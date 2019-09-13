@@ -53,12 +53,15 @@
 
 .explanation {
     padding: 10px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
 }
 
 .problem {
     padding: 10px;
+    background-color: #f7f7f7;
+    font-family: Oswald;
+    font-size: 21px;
 }
 
 .options-box {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { set } from 'mongoose';
+// import hljs from 'highlight.js';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -72,6 +73,7 @@ import { set } from 'mongoose';
             options = question.options;
             problem = question.problem;
         }
+       
         
         return (
             <div className="question-box">
@@ -80,26 +82,28 @@ import { set } from 'mongoose';
                 </div>
                 
                 <div className="problem">
-                {/* <pre>
-                <code data-lang="Javascript"> */}
+                
                 {problem.split(",").map((line, i) => (
+                    
+
                     <div key={i}>
-                        <div className="problem-start">{(i === 0 ? line : "")}</div>
                         <pre className={`pre${i}`}>
+                        <code className="html">
+                        <div className="problem-start">{(i === 0 ? line : "")}</div>
                         
                         {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""}
                         
-                        </pre>
                         <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div>
+                            </code>
+                        </pre>
                     </div>
                 ))}
-                {/* </code>
-                </pre> */}
+               
                 </div>
                 
                 
                 <div className="options-box">
-                    {/* <form type="submit" onSubmit={this.handleSubmit}> */}
+                  
                 {options.map((option, i) => (
                     <div className="options" key={i}>
                         <input type="radio"
@@ -119,7 +123,7 @@ import { set } from 'mongoose';
                     
                 ))}
 
-                    {/* </form> */}
+                   
                 </div>
             </div>
          )
