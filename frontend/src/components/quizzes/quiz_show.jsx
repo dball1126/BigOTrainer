@@ -91,12 +91,12 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 <div className="problem">
                 
                 {problem.split(",").map((line, i) => (
-                    <div className={"pre-div"}>
-                    <pre className={`pre${i}`} >
-                        <code className="language-javascript" >
+                    // <pre className={`pre${i}`} >
+                    //     <code className="language-javascript" >
                     
                         
                    
+                    <div className={"pre-div"}>
                         {/* <div className="problem-start">{(i === 0 ? line : "")}</div> */}
                         
                         {/* {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""} */}
@@ -112,10 +112,10 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                                   
                         {/* {line} */}
                         {/* <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div> */}
-                   
-                </code>
-            </pre>
             </div>
+                   
+            //     </code>
+            // </pre>
                 ))}
                
                 </div>
