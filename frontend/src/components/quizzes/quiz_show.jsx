@@ -3,8 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { set } from 'mongoose';
 // import { Component2   } from './highlighter';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+// import Prism from "prismjs";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 // import React from 'react';
 // import hljs from 'highlight.js';
  class QuizShow extends React.Component{
@@ -38,6 +39,7 @@ import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
                 answer: this.props.quiz.questions[0].answer}))
                 
          } 
+        //  Prism.highlightAll();
      }
 
      handleSubmit() {
@@ -89,24 +91,32 @@ import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
                 <div className="problem">
                 
                 {problem.split(",").map((line, i) => (
+                    <div className={"pre-div"}>
+                    <pre className={`pre${i}`} >
+                        <code className="language-javascript" >
                     
-                    
-                    <div key={i}>
-                        <pre className={`pre${i}`}>
-                        <code className="html">
-                                <SyntaxHighlighter language="javascript" style={dark}  >
+                        
+                   
                         {/* <div className="problem-start">{(i === 0 ? line : "")}</div> */}
                         
                         {/* {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""} */}
-                        {line}
+                                    {/* {line.split(" ").map((li, j) =>   */}
+                                    
+                        <SyntaxHighlighter language="javascript" style={darcula} id={`star${line}`} >
+                            
+                                    
+                                    {line}
+
+                        </SyntaxHighlighter>
+                                    
+                                  
                         {/* {line} */}
                         {/* <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div> */}
-                        </SyntaxHighlighter>
-                            </code>
-                        </pre>
-                    </div>
+                   
+                </code>
+            </pre>
+            </div>
                 ))}
-              
                
                 </div>
                 
@@ -220,7 +230,7 @@ import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
         return (
             <div className="quiz-show-container">
                 <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css" />
-
+                
                 <NavBar />
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>

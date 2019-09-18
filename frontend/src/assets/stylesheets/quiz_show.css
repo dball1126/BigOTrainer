@@ -59,9 +59,9 @@
 
 .problem {
     padding: 10px;
-    background-color: rgb(68, 68, 68);;
+    /* background-color: rgb(68, 68, 68);; */
     font-family: Oswald;
-    font-size: 21px;
+    font-size: 16px;
 }
 
 .options-box {
@@ -155,7 +155,7 @@ pre > code[class]::before {
   min-width: 100%
 } */
 
-.pre1 {
+/* .pre1 {
     padding-top: 10px;
     padding-left: 10px;
     margin-bottom: -10px;
@@ -184,9 +184,9 @@ margin-bottom: -10px;
 .pre6 {
 padding-left: 55px;
 /* margin-bottom: -10px; */
-}
+/* } */
 
-.pre7 {
+/* .pre7 {
 padding-left: 65px;
 margin-bottom: -10px;
 
@@ -219,4 +219,85 @@ margin-bottom: -10px;
     padding-left: 15px;
 margin-bottom: -10px;
 
+} */ 
+
+ /* .pre{
+     word-wrap: break-word;
+  white-space: pre;
+  
+  white-space: pre-wrap;
+  display: inline;
+  white-space: pre-line;
+    
+  white-space: -pre-wrap;
+ 
+  white-space: -o-pre-wrap;
+
+  white-space: -moz-pre-wrap;
+ 
+  white-space: -hp-pre-wrap;
+  
+} */
+
+/* .pre5 code *{
+    margin-bottom: -10px;
+
+} */ 
+
+pre {
+   /* color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+    display: inline;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+    hyphens: none; */
+    display: inline;
+    word-wrap: normal;
+    padding-bottom: 10px;
+  
+}
+
+/* #starfunction {
+    display: inline;
+} */
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+    
+	/* color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace; */
+	/* direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5; */
+    /* display: inline; */
+	/* -moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4; */
+/* 
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none; */
+} 
+
+
+.pre-div {
+    padding-bottom: 12px;
 }
