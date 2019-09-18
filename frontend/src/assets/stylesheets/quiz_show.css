@@ -65,6 +65,7 @@
     font-family: Oswald;
     font-size: 16px;
     overflow: hidden;
+    min-height: 70px;
 }
 
 .options-box {
@@ -327,3 +328,4 @@ pre[class*="language-"] { */
 #pre-problem {
     height: 20px;
 }
+

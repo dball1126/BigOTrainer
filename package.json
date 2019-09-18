@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/dball1126/BigOTrainer#readme",
   "dependencies": {
+    "algebra.js": "^0.2.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
@@ -33,6 +34,7 @@
     "passport-jwt": "^4.0.0",
     "prismjs": "^1.17.1",
     "react-highlight.js": "^1.0.7",
+    "react-mathjax2": "0.0.2",
     "react-syntax-highlighter": "^11.0.2",
     "react-syntax-highlighter-virtualized-renderer": "^1.1.0",
     "validator": "^11.1.0"

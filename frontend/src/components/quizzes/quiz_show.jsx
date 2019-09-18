@@ -1,17 +1,23 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
+import { Fraction, toTex, Expression, Equation } from 'algebra.js';
 import { set } from 'mongoose';
+import MathJax from 'react-mathjax2'
+import algebra from 'algebra.js';
 // import { Component2   } from './highlighter';
 // import Prism from "prismjs";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+// const tex = `f(x) = \\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi`;
+
 // import React from 'react';
 // import hljs from 'highlight.js';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
          this.displayData = [];
+         this.questionData = [];
          this.state = {quiz: "",
                         name: "",
                         level: "",
@@ -23,6 +29,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         answersCount: {},
                         result: '',
                         showData: this.displayData,
+                        showQuestionData: this.questionData,
                         selectedOption: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
      }
@@ -43,9 +50,6 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      }
 
      handleSubmit() {
-         
-         
-        
          let quiz = {
              quiz: this.state.quiz,
              id: this.props.id,
@@ -72,6 +76,16 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         let title = ""
         let options = [];
         let problem = "";
+        setTimeout(() => {
+            if (problem === ""){
+                this.questionData.push({display: "none"})
+
+                } else {
+                    this.questionData = [];
+                }
+                this.setState({showQuestionData: this.questionData})
+            }, 100)
+
         if (question !== "" && question !== undefined) {
             
             explanation = question.explanation;
@@ -79,8 +93,17 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             options = question.options;
             problem = question.problem;
         }
-       
-        
+         var exp = new Expression("x").add(2);
+         var exp3 = exp.pow(3);
+        //  var Fraction = algebra.Fraction;
+        //  var Expression = algebra.Expression;
+        //  var Equation = algebra.Equation;
+         var n1 = algebra.parse("x + 2");
+         var n2 = algebra.parse("x + 3");
+         var n3 = algebra.parse("x + 4");
+         var cubic = new Equation(n1.multiply(n2).multiply(n3), 0);
+
+         console.log(cubic.toString());
         return (
             <div className="question-box">
                 <div className="explanation">
@@ -88,7 +111,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 </div>
                 
                    
-                <div className="problem">
+                <div className="problem" style={this.questionData[0]}>
                 
                 {problem.split(",").map((line, i) => (
                     // <pre className={`pre${i}`} >
@@ -96,7 +119,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                     
                         
                    
-                    <div className={`pre${i}`} id={"pre-problem"}>
+                    <div className={`pre${i}`} id={"pre-problem"} key={i}>
                         {/* <div className="problem-start">{(i === 0 ? line : "")}</div> */}
                         
                         {/* {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""} */}
@@ -130,9 +153,13 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                                id="option-radio-id"/>
                         <label htmlFor="option-radio-id">
                             &nbsp; &nbsp;
-                            <span className="letter-title"> 
-                                {option.letter} : {option.title}
+                                {option.letter} : {option.title.split(" ").map((ele, i) => (
+                                            // <MathJax.Context input='tex' >
+                                        <span className={`letter-title${ele}`} key={i}> 
+                                        &nbsp;{ele}
                             </span>
+                                        //  </MathJax.Context>
+                                ))}
                         </label>
                         </div>
                     
@@ -227,7 +254,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         return (
             <div className="quiz-show-container">
                 <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css" />
-                
+                <script src="algebra-0.2.5.min.js"></script>
                 <NavBar />
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>
