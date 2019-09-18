@@ -96,23 +96,20 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                     
                         
                    
-                    <div className={"pre-div"}>
+                    <div className={`pre${i}`} id={"pre-problem"}>
                         {/* <div className="problem-start">{(i === 0 ? line : "")}</div> */}
                         
                         {/* {(i !== 0 && i !== problem.split(",").length - 1) ? line : ""} */}
                                     {/* {line.split(" ").map((li, j) =>   */}
                                     
-                        <SyntaxHighlighter language="javascript" style={darcula} id={`star${line}`} >
-                            
-                                    
+                        <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
                                     {line}
-
                         </SyntaxHighlighter>
                                     
-                                  
+                                   
                         {/* {line} */}
                         {/* <div className="problem-end">{(i === problem.split(",").length - 1) ? line : ""}</div> */}
-            </div>
+                    </div>
                    
             //     </code>
             // </pre>

@@ -58,10 +58,13 @@
 }
 
 .problem {
-    padding: 10px;
+    /* padding: 14px; */
+    
     /* background-color: rgb(68, 68, 68);; */
+    background-color: rgb(43, 43, 43);
     font-family: Oswald;
     font-size: 16px;
+    overflow: hidden;
 }
 
 .options-box {
@@ -105,7 +108,7 @@
     padding-left: 10px;
 }
 .problem-start {
-    padding-left: 10px;
+    padding-left: -10px;
 }
 
 
@@ -155,71 +158,83 @@ pre > code[class]::before {
   min-width: 100%
 } */
 
-/* .pre1 {
+ .pre1 {
     padding-top: 10px;
     padding-left: 10px;
-    margin-bottom: -10px;
+    
+    
 }
 
 .pre2 {
 padding-left: 15px;
-margin-bottom: -10px;
+
+
 }
 
 .pre3 {
 padding-left: 25px;
-margin-bottom: -10px;
+
+
 }
 
 .pre4 {
 padding-left: 35px;
-margin-bottom: -10px;
+
+
 }
 
 .pre5 {
 padding-left: 45px;
-margin-bottom: -10px;
+
+
 }
 
 .pre6 {
 padding-left: 55px;
-/* margin-bottom: -10px; */
-/* } */
+ 
+  
+ } 
 
-/* .pre7 {
+ .pre7 {
 padding-left: 65px;
-margin-bottom: -10px;
+
+
 
 }
 
 .pre8 {
 padding-left: 55px;
-margin-bottom: -10px;
+
+
 
 }
 
 .pre9 {
 padding-left: 45px;
-margin-bottom: -10px;
+
+
 
 }
 
 .pre10 {
     padding-left: 35px;
-margin-bottom: -10px;
+
+
 
 }
 
 .pre11 {
     padding-left: 25px;
-margin-bottom: -10px;
+
+
 
 }
 .pre12 {
     padding-left: 15px;
-margin-bottom: -10px;
 
-} */ 
+
+
+} 
 
  /* .pre{
      word-wrap: break-word;
@@ -245,6 +260,7 @@ margin-bottom: -10px;
 } */ 
 
 pre {
+    
    /* color: black;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -258,12 +274,12 @@ pre {
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-
+    
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
-    hyphens: none; */
-    display: inline;
+    hyphens: none;  */
+    /* display: inline;
     word-wrap: normal;
     padding-bottom: 10px;
   
@@ -274,8 +290,8 @@ pre {
 } */
 
 
-code[class*="language-"],
-pre[class*="language-"] {
+/* code[class*="language-"],
+pre[class*="language-"] { */
     
 	/* color: black;
 	text-shadow: 0 1px white;
@@ -298,6 +314,16 @@ pre[class*="language-"] {
 } 
 
 
-.pre-div {
+/* .pre-div {
     padding-bottom: 12px;
+} */
+
+/* pre[class*="star"] {
+    padding: -10px;
+    margin: -10px;
+} */
+
+
+#pre-problem {
+    height: 20px;
 }
