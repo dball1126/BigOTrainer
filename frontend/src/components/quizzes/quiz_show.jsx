@@ -103,7 +103,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          var n3 = algebra.parse("x + 4");
          var cubic = new Equation(n1.multiply(n2).multiply(n3), 0);
 
-         console.log(cubic.toString());
+        //  console.log(cubic.toString());
         return (
             <div className="question-box">
                 <div className="explanation">
