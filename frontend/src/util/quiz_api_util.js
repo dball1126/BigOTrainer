@@ -15,14 +15,8 @@ export const getUserQuizzes = id => {
     return axios.get(`/api/quizzes/user/${id}`);
 };
 
-
 // post quiz
 
 export const postQuiz = data => {
-    
-    
-    return axios.post(`/api/quizzes/${data.quiz._id}`, data)
-        
-        
+    return axios.post(`/api/quizzes/${data.quiz._id}`, data) 
     }
-    
