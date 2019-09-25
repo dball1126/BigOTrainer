@@ -41,6 +41,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      }
 
      handleSubmit() {
+         debugger
          let quiz = {
              quiz: this.state.quiz,
              id: this.props.id,
