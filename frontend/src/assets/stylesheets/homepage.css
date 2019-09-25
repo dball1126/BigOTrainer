@@ -3,6 +3,7 @@
 @import './quiz_main.css';
 @import './quiz_show.css';
 @import './modals.css';
+@import './stats.css';
 
 .homepage-container {
     font-size: 16px;
@@ -12,7 +13,7 @@
 .session-container {
     height: 60px;
     background-color: #FFFFFF;
-    
+    font-family: sans-serif;
 }
 
 .session-box {
@@ -81,6 +82,7 @@
     font-weight: bold;
     border: solid 1px #FFFFFF;
     margin-right: 5px;
+    font-family: inherit;
 }
 .quizzes-container .session-container {
     background-color: rgb(239, 136, 105);
