@@ -15,7 +15,9 @@ const mapStateToProps = (state, props) => {
     
     return {
         quizzes: Object.values(state.quizzes.all).filter(quiz => quiz.master === true),
-        currentUser: state.session.user.id || ""
+        currentUser: state.session.user.id || "",
+        quizzesWon: quizzesWon,
+        quizzesLost: quizzesLost
     }
 }
 
