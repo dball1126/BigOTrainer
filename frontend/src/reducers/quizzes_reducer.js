@@ -18,7 +18,7 @@ const QuizzesReducer = (state = {all: {}, data: {}, user: {}, new: undefined}, a
             return Object.assign({}, oldState, oldState.data = quiz)
         case RECEIVE_USER_QUIZZES:
             // there could be an issue here
-            debugger
+            
             return oldState;
         default:
             return oldState;
