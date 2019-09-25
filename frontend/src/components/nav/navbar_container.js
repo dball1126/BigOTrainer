@@ -7,7 +7,8 @@ const mapStateToProps = (state, props) => {
     return {
     quizzesLost: props.quizzesLost || 0,
     quizzesWon: props.quizzesWon || 0,
-    loggedIn: state.session.isAuthenticated
+    loggedIn: state.session.isAuthenticated,
+    userEmail: props.userEmail
     }
 };
 

@@ -27,7 +27,7 @@ class Quiz extends React.Component {
             
             return (
                 <div className="quizzes-container">
-                    <NavBar quizzesWon={this.props.quizzesWon} quizzesLost={this.props.quizzesLost} />
+                    <NavBar quizzesWon={this.props.quizzesWon} quizzesLost={this.props.quizzesLost} userEmail={this.props.userEmail}/>
 
                     <div className="quiz-title">
                         <h2>Time Compexity Quizzes</h2>

@@ -24,6 +24,9 @@ class NavBar extends React.Component {
                             <span className="winners">Quizzes Won: {this.props.quizzesWon}</span>
                             <span className="losers">Quizzes Lost: {this.props.quizzesLost}</span>
                         </div>
+                        <div className="nav-email-box">
+                            <span className="nav-email">{this.props.userEmail}</span>
+                        </div>
                     
                     <div className="logout-box">
                         <button onClick={this.logoutUser} className="logout-button">Logout</button>
