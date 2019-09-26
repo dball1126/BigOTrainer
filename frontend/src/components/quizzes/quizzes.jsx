@@ -11,9 +11,11 @@ class Quiz extends React.Component {
     }
 
     componentDidMount() {
-        
-        this.props.fetchQuizzes();
-        this.props.fetchUserQuizzes(this.props.currentUser)
+        setTimeout(() => {
+
+            this.props.fetchQuizzes();
+            this.props.fetchUserQuizzes(this.props.currentUser)
+        }, 100)
     }
 
     UNSAFE_componentWillReceiveProps(newState){
@@ -21,9 +23,9 @@ class Quiz extends React.Component {
     }
 
     render() {
-        const quizzesLost = this.props.quizzesLost;
-        const quizzesWon = this.props.quizzesWon;
-        const userEmail = this.props.userEmail
+        let quizzesLost = this.props.quizzesLost;
+        let quizzesWon = this.props.quizzesWon;
+        let userEmail = this.props.userEmail
         if (this.state.quizzes.length === 0) {
             return (<div>There are no Quizzes</div>)
         } else {

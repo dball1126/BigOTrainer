@@ -37,7 +37,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 answer: this.props.quiz.questions[0].answer}))
                 
          } 
-         debugger
+         
 
          if (this.state.quizzes === undefined){
              this.props.fetchQuizzes();
