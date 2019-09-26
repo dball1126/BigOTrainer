@@ -37,6 +37,11 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 answer: this.props.quiz.questions[0].answer}))
                 
          } 
+         debugger
+
+         if (this.state.quizzes === undefined){
+             this.props.fetchQuizzes();
+         }
         
      }
 
@@ -212,13 +217,15 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          
         const level = this.state.level;
         const name = this.state.name;
-        
+         let quizzesLost = this.props.quizzesLost;
+         let quizzesWon = this.props.quizzesWon;
+         let userEmail = this.props.userEmail
         
         return (
             <div className="quiz-show-container">
                 <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css" />
                 <script src="algebra-0.2.5.min.js"></script>
-                <NavBar />
+                <NavBar quizzesWon={quizzesWon} quizzesLost={quizzesLost} userEmail={userEmail}/>
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>
                 </div>
