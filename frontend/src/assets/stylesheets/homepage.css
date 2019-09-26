@@ -4,6 +4,7 @@
 @import './quiz_show.css';
 @import './modals.css';
 @import './stats.css';
+@import './media_query.css';
 
 .homepage-container {
     font-size: 16px;
