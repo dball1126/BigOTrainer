@@ -144,3 +144,12 @@
     height: 200px;
     background-color: #8080804f;
 }
+
+
+.description {
+    margin-top: -20px;
+    font-size: 20px;
+    text-shadow: none;
+    text-align: center;
+    line-height: 1;
+}
