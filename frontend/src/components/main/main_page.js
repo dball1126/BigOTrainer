@@ -1,14 +1,33 @@
 import React from 'react';
 import NavBar from '../nav/navbar_container';
+// import { Spring } from 'react-spring/renderprops'
+// import { Animate, AnimateKeyframes, AnimateGroup } from 'react-simple-animate';
+// import Spinner from 'react-spinner-material';
+var Spinner = require('react-spinkit');
 class MainPage extends React.Component {
+    constructor(props){
+        super(props);
+         props = {
+            startStyle: { opacity: 0 },
+            endStyle: { opacity: 1 }
+        };
+    }
     render(){
         return (
             <div className="homepage-container">
                 <NavBar />
+               
             <div className="homepage-banner">
+                     
                 <div className="homepage-title">
-                    <h1>BigOTrainer</h1>
+                <div className="spinner">
                 </div>
+                    <h1>BigOTrainer</h1>
+                    <Spinner id="spin-doctor" name="ball-scale-multiple" color="aqua" >
+
+                        </Spinner>
+                </div>       
+               
             </div>
                 <div className="homepage-body">
 
@@ -17,6 +36,7 @@ class MainPage extends React.Component {
                     
                 </footer>
             </div>
+                       
         )
     }
 }
