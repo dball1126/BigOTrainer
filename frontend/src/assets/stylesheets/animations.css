@@ -24,3 +24,16 @@ margin-left: -84px;
 .big-o{
     font-size: 142px;
 }
+
+.wave {
+    z-index: 21;
+    position: absolute;
+}
+
+.lower-body{
+    margin-top: -5px;
+    /* background-color: rgb(94,158,241); */
+    height:100%;
+    width:100%;
+    background-color: black;
+}

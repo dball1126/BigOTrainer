@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../nav/navbar_container';
 import Spinner from 'react-spinkit';
+import Wave from 'react-wavify'
 class MainPage extends React.Component {
     constructor(props){
         super(props);
@@ -26,7 +27,17 @@ class MainPage extends React.Component {
                
             </div>
                 <div className="homepage-body">
+                    <Wave fill='black'
+                        paused={false}
+                        options={{
+                            height: 20,
+                            amplitude: 30,
+                            speed: 0.15,
+                            points: 3
+                        }}/>
+                        <div className="lower-body">
 
+                        </div>
                 </div>
                 <footer className="homepage-footer">
                     
