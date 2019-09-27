@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
                         <div className="credentials-header">
-                            <h1>Log in to BigOTrainer</h1>
+                            <h1>Login to BigOTrainer</h1>
                         </div>
                         <br />
                         <input type="text"

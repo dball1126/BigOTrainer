@@ -67,7 +67,7 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
                         <div className="credentials-header">
-                            <h1>Sign Up for BigOTrainer</h1>
+                            <h1>Sign up for BigOTrainer</h1>
                         </div>
                         <br />
                         <input type="text"
