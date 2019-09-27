@@ -89,7 +89,10 @@ class SignupForm extends React.Component {
                                placeholder="Password" />
                         <br />
                         <input type="submit" value="Submit" className="session-submit"/>
-                        
+                        <p className="disclaimer">By hitting submit you agree the owner of 
+                                                    this website reserves the right to restrict old 
+                                                    or new content if they decide to start charging a 
+                                                    fee for users to have access to all the conent.</p>
                     </div>
                 </form>
                     </div>

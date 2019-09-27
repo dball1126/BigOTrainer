@@ -93,6 +93,7 @@
     line-height: 2.5;
     /* border: solid 1px rgb(239, 136, 105); */
     margin-right: 12px;
+    cursor: pointer;
 }
 
 .demo-button{
@@ -114,4 +115,10 @@
     background-color: rgb(239, 136, 105);
     color: #FFFFFF;
     transition: all 0.4s ease-in-out;
+}
+
+.disclaimer{
+    padding-top: 20px;
+    font-family:inherit;
+    font-size: 15px;
 }
