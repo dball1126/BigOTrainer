@@ -15,8 +15,9 @@
 
 .session-container {
     height: 60px;
-    background-color: #FFFFFF;
+    background-color: #F2F2F2;
     font-family: sans-serif;
+    
 }
 
 .session-box {
@@ -26,6 +27,7 @@
     justify-content: flex-end;
     height: 40px;
     padding-top: 10px;
+    
 }
 
 .logout-box {

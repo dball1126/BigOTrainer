@@ -27,7 +27,7 @@ class MainPage extends React.Component {
                
             </div>
                 <div className="homepage-body">
-                    <Wave fill='black'
+                    <Wave fill='#F2F2F2'
                         paused={false}
                         options={{
                             height: 20,
