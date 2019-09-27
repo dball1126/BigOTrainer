@@ -69,8 +69,8 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             question = this.state.questions[this.state.counter]
         } 
         
-        let explanation = ""
-        let title = ""
+        let explanation = "";
+        let title = "";
         let options = [];
         let problem = "";
         setTimeout(() => {
@@ -142,8 +142,8 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
      setNextQuestion(){
             
-         const counter = this.state.counter + 1;
-         const questionId = this.state.questionId + 1;
+         let counter = this.state.counter + 1;
+         let questionId = this.state.questionId + 1;
         
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
