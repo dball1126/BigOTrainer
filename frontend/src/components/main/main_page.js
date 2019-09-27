@@ -23,7 +23,7 @@ class MainPage extends React.Component {
                     <Spinner id="spin-doctor" name="ball-scale-multiple" color="black" />
 
                        <p className="description">This is a website where you can train your skills on the runtime of an algorithm, method, or function.
-                                                  So Signup, or try the Demo Login to take some Time Complexity Quizzes.</p>
+                                                  So Signup, or try the Demo Login and take some Time Complexity Quizzes.</p>
                 </div>       
                
             </div>
