@@ -134,12 +134,13 @@
 
 .homepage-body {
     height: 500px;
-    /* background-color: rgb(94,158,241); */
+    
     background-color: rgb(239, 136, 105);
     
 }
 
 .homepage-footer {
+    
     height: 200px;
-    background-color: #f2f2f2;
+    background-color: #8080804f;
 }
