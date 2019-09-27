@@ -64,6 +64,7 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
      renderQuestion(){
+         
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
@@ -166,7 +167,8 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 300)
+        }, 500)
+        
         setTimeout(() => {
             this.displayData = [];
             this.setState({
