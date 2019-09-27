@@ -151,5 +151,8 @@
     font-size: 20px;
     text-shadow: none;
     text-align: center;
-    line-height: 1;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
