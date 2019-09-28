@@ -49,7 +49,7 @@
 
 .modal-result-good{
     width: 100%;
-    height: 60%;
+    height: 60%; 
     position: absolute;
     text-align: center;
     background-color: lightgreen;
@@ -58,6 +58,8 @@
     font-weight: 700;
     color: #FFFFFF;
     border-radius: 50%;
+
+    
     
 }
 
