@@ -16,7 +16,14 @@ router.post("/register", (req, res) => {
 
     if (!isValid) {
         return res.status(400).json(errors);
-    }
+    
+    } 
+    User.findOne({ username: req.body.username }).then(user => {
+        if(user) {
+            return res.status(400).json({email: "A user has already registered with that username"})
+        } else {
+
+    
     
     User.findOne({ email: req.body.email })
                     
@@ -51,6 +58,8 @@ router.post("/register", (req, res) => {
                 })
             }
         })
+        }
+    })
 })
 
 router.post('/login', (req, res) => {

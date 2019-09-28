@@ -13,11 +13,11 @@ module.exports = function(data) {
     }
 
     if (Validator.isEmpty(data.email)) {
-        errors.email = "Email field is required";
+        errors.email = "Email must be at least 6 characters and valid format";
     }
-
+    
     if (Validator.isEmpty(data.password)) {
-        errors.password = "Password field is required";
+        errors.password = "Password must be at least 6 characters";
     }
 
     if (Validator.isEmpty(data.username)) {
