@@ -12,11 +12,12 @@ export const logoutUser = () => ({
 })
 
 export const logout = () => dispatch => {
+    
     localStorage.removeItem('jwtToken')
 
     APIUtil.setAuthToken(false)
 
-    dispatch(logoutUser());
+    dispatch(logoutUser())
 };
 
 export const receiveCurrentUser = (currentUser) => ({

@@ -9,6 +9,7 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case RECEIVE_USER_LOGOUT:
+            
             return {
                 isAuthenticated: false,
                 user: undefined
