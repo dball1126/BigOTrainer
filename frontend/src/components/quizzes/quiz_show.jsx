@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
  class QuizShow extends React.Component{
      constructor(props){
@@ -239,7 +239,9 @@ import { dark, darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
+                           
                             {this.renderQuestion()}
+                          
                         </div>
                         <input type="submit" value="Submit" className="submit-quiz"/>
                     </form>

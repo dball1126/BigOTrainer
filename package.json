@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/dball1126/BigOTrainer#readme",
   "dependencies": {
+    "@types/react-transition-group": "^4.2.2",
     "algebra.js": "^0.2.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -41,6 +42,7 @@
     "react-spring": "^8.0.27",
     "react-syntax-highlighter": "^11.0.2",
     "react-syntax-highlighter-virtualized-renderer": "^1.1.0",
+    "react-transition-group": "^1.2.1",
     "react-wavify": "^1.1.7",
     "validator": "^11.1.0"
   },
