@@ -71,7 +71,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         } 
         
         let explanation = "";
-        let title = "";
+        
         let options = [];
         let problem = "";
         setTimeout(() => {
@@ -87,7 +87,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         if (question !== "" && question !== undefined) {
             
             explanation = question.explanation;
-            title = question.title;
+            
             options = question.options;
             problem = question.problem;
         }

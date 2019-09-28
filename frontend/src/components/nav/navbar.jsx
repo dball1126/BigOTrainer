@@ -40,7 +40,7 @@ class NavBar extends React.Component {
             return (
                 <div className="session-box">
                     <div className="demo-login">
-                        <a href="o" className="demo-button" onClick={() => this.props.login({email: `demo@demo.com`, password: 'password'})}>Demo Login</a>
+                        <span className="demo-button" onClick={() => this.props.login({email: `demo@demo.com`, password: 'password'})}>Demo Login</span>
                     </div>
                     <div className="signup-box">
                         <Link to={'/signup'}>Signup</Link>
