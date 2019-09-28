@@ -75,6 +75,7 @@
     padding-left: 20px;
     padding-top: 20px;
     /* margin-top: -250px; */
+    cursor: pointer;
 }
 
 .close-x {

@@ -167,7 +167,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 500)
+        }, 900)
         
         setTimeout(() => {
             this.displayData = [];
