@@ -21,8 +21,10 @@ module.exports = function(data) {
     }
 
     if (Validator.isEmpty(data.username)) {
-        errors.username = "Username field is required";
+        errors.username = "Username must be at least 6 characters";
     }
+
+   
 
     return {
         errors,
