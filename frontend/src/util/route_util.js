@@ -21,6 +21,7 @@ const Protected = ({ component: Component, loggedIn, ...rest}) => (
             loggedIn ? (
             <Component {...props} />
             ) : (
+                //Redirect to Homepage on Logout
                 <Redirect to="/" />
             )
         } 
