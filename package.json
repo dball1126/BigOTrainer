@@ -48,6 +48,7 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
+    "@types/node": "^12.7.8",
     "nodemon": "^1.19.1"
   }
 }

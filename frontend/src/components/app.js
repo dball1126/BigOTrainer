@@ -2,11 +2,11 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import MainPage from './main/main_page';
-const path = require('path')
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import QuizzesContainer from './quizzes/quiz_container';
 import QuizShowContainer from './quizzes/quiz_show_container';
+const path = require('path');
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {
