@@ -15,8 +15,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 const App = () => (
     <div>
-        
-
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
