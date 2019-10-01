@@ -76,7 +76,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         let options = [];
         let problem = "";
         
-        
+        // If the question.problem is blank take it away
         if (this.state.questions.length){
             problem = question.problem;
         setTimeout(() => {

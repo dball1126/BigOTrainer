@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../nav/navbar_container';
 import Spinner from 'react-spinkit';
 import Wave from 'react-wavify'
+import {Link} from 'react-router-dom';
 class MainPage extends React.Component {
     constructor(props){
         super(props);
@@ -11,6 +12,7 @@ class MainPage extends React.Component {
         };
     }
     render(){
+        debugger
         return (
             <div className="homepage-container">
                 <NavBar />
