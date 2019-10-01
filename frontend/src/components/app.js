@@ -7,13 +7,8 @@ import SignupFormContainer from './session/signup_form_container';
 import QuizzesContainer from './quizzes/quiz_container';
 import QuizShowContainer from './quizzes/quiz_show_container';
 const path = require('path');
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
-    app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    })
-}
-const App = () => (
+
+const app = () => (
     <div>
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
@@ -24,5 +19,12 @@ const App = () => (
         </Switch>
     </div>
 );
+// app.use(express.static(path.join(__dirname, "client", "build")))
 
-export default App;
+if (process.env.NODE_ENV === 'production') {
+    // app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
+export default app;
