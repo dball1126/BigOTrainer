@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
-
+import mainPage from './main_page';
 
 const mapDispatchToProps = (dispatch) => {
     
@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(mainPageContainer);
+export default connect(null, mapDispatchToProps)(mainPage);
