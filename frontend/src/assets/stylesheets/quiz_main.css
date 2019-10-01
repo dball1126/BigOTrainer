@@ -74,7 +74,7 @@
     width: 180px;
     height: 50px;
     margin-left: 10px;
-    margin-top: 114px;
+    margin-top: 84px;
 }
 
 .begin-quiz-button {
@@ -91,6 +91,13 @@
 }
 
 .quiz-level {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.times-taken{
+    font-size: 25px;
     text-align: center;
     padding-top: 10px;
 }

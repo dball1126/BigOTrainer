@@ -14,6 +14,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         level: "",
                         questions: "",
                         counter: 0,
+                        problem: "",
                         questionId: 1,
                         answerOptions: [],
                         answer: '',
@@ -74,6 +75,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         
         let options = [];
         let problem = "";
+        
+        
+        if (this.state.questions.length){
+            problem = question.problem;
         setTimeout(() => {
             if (problem === ""){
                 this.questionData.push({display: "none"})
@@ -83,6 +88,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 }
                 this.setState({showQuestionData: this.questionData})
             }, 100)
+        }
 
         if (question !== "" && question !== undefined) {
             
