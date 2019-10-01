@@ -8,17 +8,19 @@ const mapStateToProps = (state, props) => {
     const userEmail = state.session.user.email;
     let quizzesWon = 0;
     let quizzesLost = 0;
+    debugger
     if (userQuizzes.length > 0) {
         quizzesWon = userQuizzes.filter(q => q.score === 1).length;
         quizzesLost = userQuizzes.filter(q => q.score === 0).length;
     }
-    
+    debugger
     return {
         quizzes: Object.values(state.quizzes.all).filter(quiz => quiz.master === true),
         currentUser: state.session.user.id || "",
         quizzesWon: quizzesWon,
         quizzesLost: quizzesLost,
-        userEmail: userEmail
+        userEmail: userEmail,
+        allQuizzes: state.quizzes.all
     }
 }
 

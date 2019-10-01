@@ -26,6 +26,8 @@ class Quiz extends React.Component {
         let quizzesLost = this.props.quizzesLost;
         let quizzesWon = this.props.quizzesWon;
         let userEmail = this.props.userEmail
+        let timesTaken = 0;
+        debugger
         if (this.state.quizzes.length === 0) {
             return (<div>There are no Quizzes</div>)
         } else {
@@ -39,11 +41,14 @@ class Quiz extends React.Component {
                     </div>
                     <div className="quiz-item-container">
                         <div className="quiz-item-box">
+                            
                             {this.state.quizzes.map(quiz => (
+                                
                                 <QuizListItem   key={quiz._id} 
                                                 id={quiz._id} 
                                                 name={quiz.name} 
-                                                level={quiz.date} 
+                                                level={quiz.level}
+                                    timesTaken={this.props.allQuizzes.filter(ele => ele._id === quiz._id).length} 
                                                 />
                             ))}
                         </div>
