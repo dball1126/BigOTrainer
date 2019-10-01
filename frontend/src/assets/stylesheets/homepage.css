@@ -156,3 +156,10 @@
     margin: 0 auto;
     padding-bottom: 10px;
 }
+
+.main-page-links {
+    text-decoration: none;
+    color: #0e141e;
+    cursor: pointer;
+    font-weight: 550;
+}
