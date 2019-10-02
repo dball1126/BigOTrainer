@@ -56,10 +56,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          
          this.props.composeQuiz(quiz).then(() => {
              setTimeout(() => {
-                 this.props.history.push(`/quizzes`)
+                 this.props.history.push(`/quizzes`)   //prevents the window from throwing an error due to an immediate promise
              }, 300)
          })
-            //  .then(this.props.history.push(`/quizzes`))
+           
           
 
      }
