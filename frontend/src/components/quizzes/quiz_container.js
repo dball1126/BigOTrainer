@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => {
         quizzesWon = userQuizzes.filter(q => q.score === 1).length;
         quizzesLost = userQuizzes.filter(q => q.score === 0).length;
     }
-    debugger
+    
     return {
         quizzes: Object.values(state.quizzes.all).filter(quiz => quiz.master === true),
         currentUser: state.session.user.id || "",
