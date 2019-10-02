@@ -1,14 +1,27 @@
 
 #spin-doctor{
-    transform: scale(2);
+    /* transform: scale(1);
     
-    position: absolute;
+    position: relative;
 left: 50%;
 top: 50%;
 z-index: 10000;
 margin-top: -262px;
-margin-left: -84px;
-   
+margin-left: -84px; */
+   /* margin:0;
+        position: relative;
+        bottom: 0;
+        height: 10%;
+        width: 100%; */
+transform: scale(2);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    z-index: 10000;
+    margin-top: -400px;
+    margin-left: 133px;
+
+
 }
 
 

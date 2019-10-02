@@ -12,7 +12,7 @@ class MainPage extends React.Component {
         };
     }
     render(){
-        debugger
+        
         return (
             <div className="homepage-container">
                 <NavBar />
@@ -21,12 +21,12 @@ class MainPage extends React.Component {
                      
                 <div className="homepage-title">
                 
-                        <h1>Big<b className="big-o">O</b>Trainer</h1>
+                        <div>
+                            Big<b className="big-o">O</b>Trainer</div>
                     <Spinner id="spin-doctor" name="ball-scale-multiple" color="black" />
-
-                       <p className="description">This is a website where you can train your skills on the runtime of an algorithm, method, or function.
-                                                  So <Link to={'/signup'} className="main-page-links">Signup</Link>, or try the <span className="main-page-links" onClick={() => this.props.login({ email: `demo@demo.com`, password: 'password' })}>Demo Login</span> and take some Time Complexity Quizzes.</p>
                 </div>       
+                       <div className="description">This is a website where you can train your skills on the runtime of an algorithm, method, or function.
+                                                  So <Link to={'/signup'} className="main-page-links">Signup</Link>, or try the <span className="main-page-links" onClick={() => this.props.login({ email: `demo@demo.com`, password: 'password' })}>Demo Login</span> and take some Time Complexity Quizzes.</div>
                
             </div>
                 <div className="homepage-body">
