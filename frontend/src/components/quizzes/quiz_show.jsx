@@ -47,15 +47,16 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      }
 
      handleSubmit() {
-         
+         let reducer = (acc, val) => acc + val;
          let quiz = {
              quiz: this.state.quiz,
              id: this.props.id,
-             answerOptions: this.state.answerOptions
+             score: this.state.answerOptions.reduce(reducer) >= 3 ? 1 : 0
          }
-         
+         debugger
          this.props.composeQuiz(quiz).then(this.props.history.push(`/quizzes`))
-         
+          
+
      }
      handleOptionChange = changeEvent => {
          this.setState({
@@ -155,8 +156,9 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-good"><span>Correct!</span></div>)
-                this.state.answerOptions.push(1)
+                this.state.answerOptions.push(1);
             }   else {
+                this.state.answerOptions.push(0);
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-bad"><span>Incorrect!</span></div>)
             }
             this.setState({showData: this.displayData})
@@ -202,7 +204,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             
             setTimeout(() => {
                 this.handleSubmit()
-                this.props.history.push('/quizzes');
+                // this.props.history.push('/quizzes');
             }, 3000)
         }
         

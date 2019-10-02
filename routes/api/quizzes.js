@@ -34,7 +34,7 @@ router.post('/:id', passport.authenticate('jwt', { session: false }),
         // if (!isValid) {
         //     return res.status(400).json(errors)
         // }
-        const reducer = (acc, val) => acc + val;
+       
         const newQuiz = new Quiz({
 
             name: req.body.quiz.name,
@@ -42,7 +42,7 @@ router.post('/:id', passport.authenticate('jwt', { session: false }),
             quiz: req.body.quiz._id,
             answerOptions: req.body.answerOptions,
             user: req.body.id,
-            score: (req.body.answerOptions.reduce(reducer) >= 1 ? 1 : 0)
+            score: req.body.score
             
         });  
         newQuiz.save().then(quiz => res.json(quiz));
