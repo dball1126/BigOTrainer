@@ -27,9 +27,8 @@ class Quiz extends React.Component {
         let quizzesWon = this.props.quizzesWon;
         let userEmail = this.props.userEmail
         
-        
         if (this.state.quizzes.length === 0) {
-            return (<div></div>)  // If no quizzes show up after loggin in
+            return (<div></div>)
         } else {
             
             return (

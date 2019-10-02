@@ -38,9 +38,9 @@ router.post('/:id', passport.authenticate('jwt', { session: false }),
             score: req.body.score
             
         });  
-        newQuiz.save().then(quiz => res.json(quiz));
+        newQuiz.save().then(quiz => res.json(quiz))
     
-    
+        
 });
 
 
@@ -60,5 +60,6 @@ router.post('/homepage',
             level: req.body.level
         });
         newQuiz.save().then(quiz => res.json(quiz));
+        
      });
 module.exports = router;

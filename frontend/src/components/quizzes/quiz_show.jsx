@@ -9,6 +9,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          super(props);
          this.displayData = [];
          this.questionData = [];
+         this.submitter = false;
          this.state = {quiz: "",
                         name: "",
                         level: "",
@@ -25,7 +26,8 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         selectedOption: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
      }
-
+     
+    
      componentDidMount(){
          
          if (this.state.quiz === ""){
@@ -46,6 +48,8 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         
      }
 
+     
+
      handleSubmit() {
          let reducer = (acc, val) => acc + val;
          let quiz = {
@@ -54,13 +58,9 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              score: this.state.answerOptions.reduce(reducer) >= 3 ? 1 : 0
          }
          
-         this.props.composeQuiz(quiz).then(() => {
-             setTimeout(() => {
-                 this.props.history.push(`/quizzes`)   //prevents the window from throwing an error due to an immediate promise
-             }, 300)
-         })
-           
-          
+         this.props.composeQuiz(quiz)
+            
+      
 
      }
      handleOptionChange = changeEvent => {
@@ -68,10 +68,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              selectedOption: changeEvent.target.value
          });
      };
-
+    
 
      renderQuestion(){
-         
+        if(this.submitter === false){ 
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
@@ -151,10 +151,15 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 </div>
             </div>
          )
+                                } else {
+                                    return (
+                                        <div></div>
+                                    )
+                                }
      }
 
      setNextQuestion(){
-            
+        
          let counter = this.state.counter + 1;
          let questionId = this.state.questionId + 1;
         
@@ -207,10 +212,14 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              }, 1100)
 
             
-            setTimeout(() => {
-                this.handleSubmit()
-                // this.props.history.push('/quizzes');
-            }, 3000)
+             
+             this.handleSubmit()
+             this.submitter = true;
+                 setTimeout(() => {
+                     
+                     this.props.history.push('/');
+                    }, 5000)
+                
         }
         
      }
