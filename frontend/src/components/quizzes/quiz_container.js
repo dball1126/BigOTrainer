@@ -20,7 +20,8 @@ const mapStateToProps = (state, props) => {
         quizzesWon: quizzesWon,
         quizzesLost: quizzesLost,
         userEmail: userEmail,
-        allQuizzes: state.quizzes.all
+        allQuizzes: state.quizzes.all,
+        userId: userId
     }
 }
 

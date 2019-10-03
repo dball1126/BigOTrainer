@@ -25,7 +25,8 @@ class Quiz extends React.Component {
     render() {
         let quizzesLost = this.props.quizzesLost;
         let quizzesWon = this.props.quizzesWon;
-        let userEmail = this.props.userEmail
+        let userEmail = this.props.userEmail;
+        let userId = this.props.userId;
         
         if (this.state.quizzes.length === 0) {
             return (<div></div>)
@@ -42,14 +43,14 @@ class Quiz extends React.Component {
                         <div className="quiz-item-box">
                             
                             {this.state.quizzes.map(quiz => {
-                                
+                                debugger
                                 return (
                                 
                                 <QuizListItem   key={quiz._id} 
                                                 id={quiz._id} 
                                                 name={quiz.name} 
                                                 level={quiz.level}
-                                    timesTaken={this.props.allQuizzes.filter(q => q.quiz === quiz._id).length} 
+                                    timesTaken={this.props.allQuizzes.filter(q => q.quiz === quiz._id && q.user === userId).length} 
                                                 />
                             )})}
                         </div>

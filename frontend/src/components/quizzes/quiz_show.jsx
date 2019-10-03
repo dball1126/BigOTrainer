@@ -29,7 +29,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      
     
      componentDidMount(){
-         
+         console.log("component did mount is run")
          if (this.state.quiz === ""){
             this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({
                 name: this.props.quiz.name,
@@ -71,7 +71,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
     
 
      renderQuestion(){
-        if(this.submitter === false){ 
+        if(this.submitter === false){   // Specifically makes sure this is not called have calling handleSubmit
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
