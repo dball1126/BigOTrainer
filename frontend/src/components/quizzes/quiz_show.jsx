@@ -218,7 +218,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                  setTimeout(() => {
                      
                      this.props.history.push('/');
-                    }, 5000)
+                    }, 3000)
                 
         }
         

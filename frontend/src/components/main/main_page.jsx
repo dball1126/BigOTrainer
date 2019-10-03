@@ -21,7 +21,7 @@ class MainPage extends React.Component {
                      
                 <div className="homepage-title">
                 
-                        <div>
+                        <div className="main-title">
                             Big<b className="big-o">O</b>Trainer</div>
                     <Spinner id="spin-doctor" name="ball-scale-multiple" color="black" />
                 </div>       

@@ -43,7 +43,7 @@ class Quiz extends React.Component {
                         <div className="quiz-item-box">
                             
                             {this.state.quizzes.map(quiz => {
-                                debugger
+                                
                                 return (
                                 
                                 <QuizListItem   key={quiz._id} 

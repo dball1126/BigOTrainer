@@ -44,7 +44,7 @@ export const login = user => dispatch => (
     })
     
     .catch(err => {
-        debugger
+        
         dispatch(receiveErrors(err.response.data));
     }))
 

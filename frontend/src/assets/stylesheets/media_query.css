@@ -32,6 +32,44 @@
 
 
 .quiz-title{
-    font-size: 30px;
+    /* font-size: 30px; */
+}
+
+.main-title{
+    font-size: 50px;
+    padding-top: 100px;
+    max-width: 400px;
+}
+.main-title .big-o{
+    font-size: 75px
+}
+
+.homepage-title #spin-doctor{
+    transform: scale(1);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    z-index: 10000;
+    margin-top: -253px;
+    margin-left: -42px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+
+
+.homepage-title #spin-doctor{
+    
+    margin-top: -239px;
+    
+}
+}
+
+@media only screen and (max-width: 500px) { 
+
+.homepage-title #spin-doctor{
+   
+    margin-top: -223px;
+    
 }
 }
