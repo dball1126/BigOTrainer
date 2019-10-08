@@ -81,6 +81,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
         
         let options = [];
         let problem = "";
+        let counter = this.state.counter;
         
         // If the question.problem is blank take it away
         if (this.state.questions.length){
@@ -95,7 +96,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 this.setState({showQuestionData: this.questionData})
             }, 100)
         }
-
+        
         if (question !== "" && question !== undefined) {
             
             explanation = question.explanation;
@@ -111,7 +112,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                 </div>
                 
                    
-                <div className="problem" style={this.questionData[0]}>
+                <div className="problem" style={this.questionData[counter]}>
                 
                 {problem.split(",").map((line, i) => (
                     <div className={`pre${i}`} id={"pre-problem"} key={i}>
