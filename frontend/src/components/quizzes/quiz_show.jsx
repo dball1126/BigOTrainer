@@ -205,7 +205,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                  })
 
              }, 1000)
-             setTimeout(() => {
+             setTimeout(() => { //Do you have more than 3 questions correct ? If so you pass.
                  if (this.state.answerOptions.reduce(reducer) >= 3) {
                      this.state.showData.push(<div key={Date.now()} className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
                  } else {
