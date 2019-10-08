@@ -29,7 +29,6 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      
     
      componentDidMount(){
-         console.log("component did mount is run")
          if (this.state.quiz === ""){
             this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({
                 name: this.props.quiz.name,
@@ -160,21 +159,24 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      }
 
      setNextQuestion(){
-        
+         const reducer = (acc, val) => acc + val;
          let counter = this.state.counter + 1;
          let questionId = this.state.questionId + 1;
+         let lastQuestion = ""
+         if (counter === 4) lastQuestion = "last-question"
         
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
-                this.state.showData.push(<div key={Date.now()} className="modal-answer-good"><span>Correct!</span></div>)
+                this.state.showData.push(<div key={Date.now()} className="modal-answer-good" id={lastQuestion}><span>Correct!</span></div>)
                 this.state.answerOptions.push(1);  // You got the question right
+                
             }   else {
                 this.state.answerOptions.push(0);   // You got the quesiton wrong
-                this.state.showData.push(<div key={Date.now()} className="modal-answer-bad"><span>Incorrect!</span></div>)
+                this.state.showData.push(<div key={Date.now()} className="modal-answer-bad" id={lastQuestion}><span>Incorrect!</span></div>)
             }
             this.setState({showData: this.displayData})
         }
-        
+            
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
                 
@@ -204,7 +206,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
              }, 1000)
              setTimeout(() => {
-                 if (this.state.answerOptions.length >= 3) {
+                 if (this.state.answerOptions.reduce(reducer) >= 3) {
                      this.state.showData.push(<div key={Date.now()} className="modal-result-good"><span className="modal-result">You Passed!</span></div>)
                  } else {
                      this.state.showData.push(<div key={Date.now()} className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
@@ -214,10 +216,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
             
              
+             
              this.handleSubmit()
              this.submitter = true;
                  setTimeout(() => {
-                     
                      this.props.history.push('/');
                     }, 3000)
                 
