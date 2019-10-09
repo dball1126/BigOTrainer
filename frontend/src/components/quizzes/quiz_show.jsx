@@ -184,6 +184,7 @@ import QuestionContainer from './question_container';
                 this.state.answerOptions.push(0);   // You got the quesiton wrong
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-bad" id={lastQuestion}><span>Incorrect!</span></div>)
             }
+            console.log("set state for display data")
             this.setState({showData: this.displayData})
         }
             //render next question
@@ -239,11 +240,11 @@ import QuestionContainer from './question_container';
         
      }
      
-     handleAnswer(event){
-        this.setState({answer: event.currentTarget.value})
-        this.setNextQuestion();
+    //  handleAnswer(event){
+    //     this.setState({answer: event.currentTarget.value})
+    //     this.setNextQuestion();
 
-     }
+    //  }
 
 
      update(field) {
@@ -293,12 +294,12 @@ import QuestionContainer from './question_container';
                         {this.displayData}
                     </div>
                 <div className="quiz-show-box">
-                    <form className="quiz" type="post"  >
+                    <div className="quiz"  >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
                            
-                            {this.renderQuestion()}
+                            {/* {this.renderQuestion()} */}
                             <QuestionContainer questions={questions} 
                                                 counter={counter} 
                                                 question={question} 
@@ -307,7 +308,7 @@ import QuestionContainer from './question_container';
                                                 problem={problem}/>
                         </div>
                         <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>button</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         )

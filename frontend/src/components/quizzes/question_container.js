@@ -10,7 +10,7 @@ const msp = (state, props) => {
     const options = props.options;
     const questions = props.questions;
     const counter = props.counter;
-     
+     debugger
     return {
         // question: question,
         // problem: problem,
