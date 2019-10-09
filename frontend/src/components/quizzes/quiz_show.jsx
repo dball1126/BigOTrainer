@@ -161,6 +161,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      setNextQuestion(){
          const reducer = (acc, val) => acc + val;
          let counter = this.state.counter + 1;
+         this.setState({counter: counter});
          let questionId = this.state.questionId + 1;
          let lastQuestion = ""
          if (counter === 4) lastQuestion = "last-question"
@@ -176,19 +177,18 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             }
             this.setState({showData: this.displayData})
         }
-            
+            //render next question
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
                 
          this.setState({
-             counter: counter,
              questionId: questionId,
              question: this.state.questions[counter],
              selectedOption: "",
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 900)
+        }, 100)
         
         setTimeout(() => {
             this.displayData = [];
