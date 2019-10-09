@@ -32,7 +32,6 @@ import QuestionContainer from './question_container';
      
     
      componentDidMount(){
-         console.log("componenet did mount");
          if (this.state.quiz === ""){
             this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({
                 name: this.props.quiz.name,
@@ -73,100 +72,98 @@ import QuestionContainer from './question_container';
      };
     
 
-     renderQuestion(){
-        if(this.submitter === false && this.state.nextTurn ){ 
-             // Specifically makes sure this is not called when calling handleSubmit
-         let question = "";
-        //  console.log("renderQuestion")
-        if (this.state.counter <= this.state.questions.length){
-            question = this.state.questions[this.state.counter]
-        } 
+    //  renderQuestion(){
+    //     if(this.submitter === false && this.state.nextTurn ){ 
+    //          // Specifically makes sure this is not called when calling handleSubmit
+    //      let question = "";
+    //     if (this.state.counter <= this.state.questions.length){
+    //         question = this.state.questions[this.state.counter]
+    //     } 
         
-        let explanation = "";
+    //     let explanation = "";
         
-        let options = [];
-        let problem = "";
-        let counter = this.state.counter;
+    //     let options = [];
+    //     let problem = "";
+    //     let counter = this.state.counter;
         
-        // If the question.problem is blank take it away
-        if (this.state.questions.length){
-            problem = question.problem;
-        setTimeout(() => {
-            if (problem === ""){
-                this.questionData.push({display: "none"})
+    //     // If the question.problem is blank take it away
+    //     if (this.state.questions.length){
+    //         problem = question.problem;
+    //     setTimeout(() => {
+    //         if (problem === ""){
+    //             this.questionData.push({display: "none"})
 
-                } else {
-                    this.questionData = [];
-                }
-                this.setState({showQuestionData: this.questionData})
-            }, 100)
-        }
+    //             } else {
+    //                 this.questionData = [];
+    //             }
+    //             this.setState({showQuestionData: this.questionData})
+    //         }, 100)
+    //     }
         
-        if (question !== "" && question !== undefined) {
+    //     if (question !== "" && question !== undefined) {
             
-            explanation = question.explanation;
+    //         explanation = question.explanation;
             
-            options = question.options;
-            problem = question.problem;
-        }
+    //         options = question.options;
+    //         problem = question.problem;
+    //     }
         
-        return (
-            <div className="question-box">
-                <div className="explanation">
-                {explanation}
-                </div>
+    //     return (
+    //         <div className="question-box">
+    //             <div className="explanation">
+    //             {explanation}
+    //             </div>
                 
                    
-                <div className="problem" style={this.questionData[counter]}>
+    //             <div className="problem" style={this.questionData[counter]}>
                 
-                {problem.split(",").map((line, i) => (
-                    <div className={`pre${i}`} id={"pre-problem"} key={i}>
+    //             {problem.split(",").map((line, i) => (
+    //                 <div className={`pre${i}`} id={"pre-problem"} key={i}>
                         
-                        <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
-                                    {line}
-                        </SyntaxHighlighter>
+    //                     <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
+    //                                 {line}
+    //                     </SyntaxHighlighter>
                                     
-                    </div>
-                ))}
-                </div>
+    //                 </div>
+    //             ))}
+    //             </div>
                 
-                <div className="options-box">
+    //             <div className="options-box">
                   
-                {options.map((option, i) => (
-                    <div className="options" key={i}>
-                        <input type="radio"
-                               className="option-radio"
-                               value={option.letter}
-                                checked={this.state.selectedOption === option.letter}
-                                onClick={this.handleOptionChange}
-                               onChange={this.update('result')}
-                               id="option-radio-id"/>
-                        <label htmlFor="option-radio-id">
-                            &nbsp; &nbsp;
-                                {option.letter} : {option.title.split(" ").map((ele, i) => (
+    //             {options.map((option, i) => (
+    //                 <div className="options" key={i}>
+    //                     <input type="radio"
+    //                            className="option-radio"
+    //                            value={option.letter}
+    //                             checked={this.state.selectedOption === option.letter}
+    //                             onClick={this.handleOptionChange}
+    //                            onChange={this.update('result')}
+    //                            id="option-radio-id"/>
+    //                     <label htmlFor="option-radio-id">
+    //                         &nbsp; &nbsp;
+    //                             {option.letter} : {option.title.split(" ").map((ele, i) => (
                                        
-                                        <span className={`letter-title${ele}`} key={i}> 
-                                        &nbsp;{ele}
-                            </span>
+    //                                     <span className={`letter-title${ele}`} key={i}> 
+    //                                     &nbsp;{ele}
+    //                         </span>
                                        
-                                ))}
-                        </label>
-                        </div>
+    //                             ))}
+    //                     </label>
+    //                     </div>
                     
-                ))}
-                </div>
-            </div>
-         )
-                                } else {
-                                    return (
-                                        <div></div>
-                                    )
-                                }
+    //             ))}
+    //             </div>
+    //         </div>
+    //      )
+    //                             } else {
+    //                                 return (
+    //                                     <div></div>
+    //                                 )
+    //                             }
                                 
-     }
+    //  }
 
      setNextQuestion(){
-         console.log("setNextQuestion")
          const reducer = (acc, val) => acc + val;
         //  this.nextTurn = false;
          let counter = this.state.counter + 1;
@@ -174,7 +171,7 @@ import QuestionContainer from './question_container';
          let questionId = this.state.questionId + 1;
          let lastQuestion = ""
          if (counter <= 4) lastQuestion = "last-question"
-        // debugger
+        
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-good" id={lastQuestion}><span>Correct!</span></div>)
@@ -184,12 +181,12 @@ import QuestionContainer from './question_container';
                 this.state.answerOptions.push(0);   // You got the quesiton wrong
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-bad" id={lastQuestion}><span>Incorrect!</span></div>)
             }
-            console.log("set state for display data")
             this.setState({showData: this.displayData})
         }
             //render next question
             
          if (counter < this.state.questions.length) {
+             console.log("set time out selected option")
             setTimeout( () => { 
                 this.setState({
             counter: counter,
@@ -200,7 +197,7 @@ import QuestionContainer from './question_container';
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 900)
+        }, 100)
         
         setTimeout(() => {
             this.displayData = [];
@@ -249,7 +246,7 @@ import QuestionContainer from './question_container';
 
      update(field) {
          return (e) => {
-            // debugger
+            
              this.setState({ [field]: e.target.value })
          }
      }
@@ -261,7 +258,7 @@ import QuestionContainer from './question_container';
          let quizzesLost = this.props.quizzesLost;
          let quizzesWon = this.props.quizzesWon;
          let userEmail = this.props.userEmail
-        
+        let selectedOption = this.state.selectedOption;
         let problem = "";
          let question = "";
          let explanation = "";
@@ -305,7 +302,8 @@ import QuestionContainer from './question_container';
                                                 question={question} 
                                                 options={options}
                                                 explanation={explanation}
-                                                problem={problem}/>
+                                                problem={problem}
+                                                selectedOption={selectedOption}/>
                         </div>
                         <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>button</button>
                     </div>

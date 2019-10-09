@@ -6,14 +6,19 @@ class Question extends React.Component {
     constructor(props){
         super(props);
         this.questionData = [];
-        this.state = {selectedOption: ""}
+        this.state = {selectedOption: this.props.selectedOption}
 
     }
     handleOptionChange = changeEvent => {
-        console.log("handle option change set state")
+        
         this.setState({
             selectedOption: changeEvent.target.value
         });
+        setTimeout(() => {
+            this.setState({
+                selectedOption: ""
+            })
+        }, 1000)
     };
 
     update(field) {
@@ -25,7 +30,6 @@ class Question extends React.Component {
     renderQuestion() {
             // Specifically makes sure this is not called when calling handleSubmit
             let question = "";
-            //  console.log("renderQuestion")
             if (this.props.counter <= this.props.questions.length) {
                 question = this.props.questions[this.props.counter]
             }
@@ -119,10 +123,9 @@ class Question extends React.Component {
 
     render(){
         const renderQuestion = () => {
-            // debugger
+        
             // Specifically makes sure this is not called when calling handleSubmit
             let question = "";
-            //  console.log("renderQuestion")
             if (this.props.counter <= this.props.questions.length) {
                 question = this.props.questions[this.props.counter]
             }
@@ -203,7 +206,6 @@ class Question extends React.Component {
                     </div>
                 )
             } else {
-                console.log("Blank is rendered on question")
                 return (
                     <div>
 
