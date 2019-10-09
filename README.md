@@ -6,3 +6,7 @@ This site specifically focuses on Time Complexity, and allows you to take quizze
 Work in Progress.
 
 [Live Site](https://still-inlet-58026.herokuapp.com/)
+
+# Technologies
+
+MongoDB, Express, React, Node.js, HTML5, CSS3.
