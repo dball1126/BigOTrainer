@@ -10,14 +10,14 @@ const msp = (state, props) => {
     const options = props.options;
     const questions = props.questions;
     const counter = props.counter;
-    debugger 
+     
     return {
-        question: question,
-        probplem: problem,
-        explanation: explanation,
-        options: options,
-        questions: questions,
-        counter: counter
+        // question: question,
+        // problem: problem,
+        // explanation: explanation,
+        // options: options,
+        // questions: questions,
+        // counter: counter
     }
 }
 
