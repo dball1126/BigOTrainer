@@ -10,12 +10,13 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          this.displayData = [];
          this.questionData = [];
          this.submitter = false;
-         this.nextTurn = true;
+         
          this.state = {quiz: "",
                         name: "",
                         level: "",
                         questions: "",
                         counter: 0,
+                        nextTurn: true,
                         problem: "",
                         questionId: 1,
                         answerOptions: [],
@@ -26,10 +27,12 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         showQuestionData: this.questionData,
                         selectedOption: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setNextQuestion = this.setNextQuestion.bind(this);
      }
      
     
      componentDidMount(){
+         console.log("componenet did mount");
          if (this.state.quiz === ""){
             this.props.fetchQuiz(this.props.match.params.quizId).then(() => this.setState({
                 name: this.props.quiz.name,
@@ -71,7 +74,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
     
 
      renderQuestion(){
-        if(this.submitter === false && this.nextTurn){   // Specifically makes sure this is not called when calling handleSubmit
+        if(this.submitter === false && this.state.nextTurn){   // Specifically makes sure this is not called when calling handleSubmit
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
@@ -160,10 +163,12 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
      }
 
      setNextQuestion(){
+         console.log("setNextQuestion")
          const reducer = (acc, val) => acc + val;
-         this.nextTurn = false;
+        //  this.nextTurn = false;
          let counter = this.state.counter + 1;
-         this.setState({counter: counter});
+         this.setState({
+                        nextTurn: false });
          let questionId = this.state.questionId + 1;
          let lastQuestion = ""
          if (counter <= 4) lastQuestion = "last-question"
@@ -183,15 +188,16 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
-                this.nextTurn = true;
-         this.setState({
+                this.setState({
+            counter: counter,
+             nextTurn: true,
              questionId: questionId,
              question: this.state.questions[counter],
              selectedOption: "",
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 500)
+        }, 900)
         
         setTimeout(() => {
             this.displayData = [];
@@ -264,7 +270,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         {this.displayData}
                     </div>
                 <div className="quiz-show-box">
-                    <form className="quiz" type="post"  onSubmit={() => this.setNextQuestion()} >
+                    <form className="quiz" type="post"  onClick={this.setNextQuestion} >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
