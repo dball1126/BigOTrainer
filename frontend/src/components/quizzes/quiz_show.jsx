@@ -10,6 +10,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          this.displayData = [];
          this.questionData = [];
          this.submitter = false;
+         this.nextTurn = true;
          this.state = {quiz: "",
                         name: "",
                         level: "",
@@ -70,7 +71,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
     
 
      renderQuestion(){
-        if(this.submitter === false){   // Specifically makes sure this is not called have calling handleSubmit
+        if(this.submitter === false && this.nextTurn){   // Specifically makes sure this is not called when calling handleSubmit
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
@@ -160,11 +161,12 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
      setNextQuestion(){
          const reducer = (acc, val) => acc + val;
+         this.nextTurn = false;
          let counter = this.state.counter + 1;
          this.setState({counter: counter});
          let questionId = this.state.questionId + 1;
          let lastQuestion = ""
-         if (counter === 4) lastQuestion = "last-question"
+         if (counter <= 4) lastQuestion = "last-question"
         
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
@@ -178,9 +180,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             this.setState({showData: this.displayData})
         }
             //render next question
+            
          if (counter < this.state.questions.length) {
             setTimeout( () => { 
-                
+                this.nextTurn = true;
          this.setState({
              questionId: questionId,
              question: this.state.questions[counter],
@@ -188,7 +191,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 100)
+        }, 500)
         
         setTimeout(() => {
             this.displayData = [];
@@ -212,13 +215,14 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                      this.state.showData.push(<div key={Date.now()} className="modal-result-bad"><span className="modal-result">You Failed!</span></div>)
                  }
                  this.setState({ showData: this.displayData })
-             }, 1100)
+             }, 1010)
 
             
              
              
              this.handleSubmit()
              this.submitter = true;
+             this.nextTurn = true;
                  setTimeout(() => {
                      this.props.history.push('/');
                     }, 3000)
