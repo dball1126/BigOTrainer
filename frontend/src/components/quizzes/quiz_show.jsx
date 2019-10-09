@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import QuestionContainer from './question_container';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -27,7 +27,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         showQuestionData: this.questionData,
                         selectedOption: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.setNextQuestion = this.setNextQuestion.bind(this);
+        // this.setNextQuestion = this.setNextQuestion.bind(this);
      }
      
     
@@ -74,8 +74,10 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
     
 
      renderQuestion(){
-        if(this.submitter === false && this.state.nextTurn){   // Specifically makes sure this is not called when calling handleSubmit
+        if(this.submitter === false && this.state.nextTurn ){ 
+             // Specifically makes sure this is not called when calling handleSubmit
          let question = "";
+        //  console.log("renderQuestion")
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
         } 
@@ -160,6 +162,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                                         <div></div>
                                     )
                                 }
+                                
      }
 
      setNextQuestion(){
@@ -167,12 +170,11 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          const reducer = (acc, val) => acc + val;
         //  this.nextTurn = false;
          let counter = this.state.counter + 1;
-         this.setState({
-                        nextTurn: false });
+         this.setState({ nextTurn: false });
          let questionId = this.state.questionId + 1;
          let lastQuestion = ""
          if (counter <= 4) lastQuestion = "last-question"
-        
+        // debugger
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-good" id={lastQuestion}><span>Correct!</span></div>)
@@ -246,6 +248,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
      update(field) {
          return (e) => {
+            // debugger
              this.setState({ [field]: e.target.value })
          }
      }
@@ -257,6 +260,26 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
          let quizzesLost = this.props.quizzesLost;
          let quizzesWon = this.props.quizzesWon;
          let userEmail = this.props.userEmail
+        
+        let problem = "";
+         let question = "";
+         let explanation = "";
+         let options = [];
+         let counter = this.state.counter;
+         let questions = this.state.questions || [];
+         if (this.state.counter <= this.state.questions.length) {
+             question = this.state.questions[this.state.counter]
+         } 
+         if (this.state.questions.length) {
+             problem = question.problem;
+         }
+             if (question !== "" && question !== undefined) {
+
+                 explanation = question.explanation;
+
+                 options = question.options;
+                 problem = question.problem;
+             }
         
         return (
             <div className="quiz-show-container">
@@ -270,15 +293,20 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                         {this.displayData}
                     </div>
                 <div className="quiz-show-box">
-                    <form className="quiz" type="post"  onClick={this.setNextQuestion} >
+                    <form className="quiz" type="post"  >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
                             {/* {explanation} */}
                            
                             {this.renderQuestion()}
-                          
+                            <QuestionContainer questions={questions} 
+                                                counter={counter} 
+                                                question={question} 
+                                                options={options}
+                                                explanation={explanation}
+                                                problem={problem}/>
                         </div>
-                        <input type="submit" value="Submit" className="submit-quiz"/>
+                        <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>button</button>
                     </form>
                 </div>
             </div>
