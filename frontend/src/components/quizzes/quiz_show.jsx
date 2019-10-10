@@ -1,9 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-// import QuestionContainer from './question_container';
+import Problem from './problem';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -117,15 +115,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                    
                 <div className="problem" style={this.questionData[counter]}>
                 
-                {problem.split(",").map((line, i) => (
-                    <div className={`pre${i}`} id={"pre-problem"} key={i}>
-                        
-                        <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
-                                    {line}
-                        </SyntaxHighlighter>
-                                    
-                    </div>
-                ))}
+                    <Problem  problem={problem}/>
                 </div>
                 
                 <div className="options-box">
@@ -186,7 +176,6 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
             //render next question
             
          if (counter < this.state.questions.length) {
-             console.log("set time out selected option")
             setTimeout( () => { 
                 this.setState({
             counter: counter,
@@ -223,49 +212,37 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                  this.setState({ showData: this.displayData })
              }, 1010)
 
-            
-             
-             
              this.handleSubmit()
              this.submitter = true;
              this.nextTurn = true;
                  setTimeout(() => {
                      this.props.history.push('/');
                     }, 3000)
-                
         }
         
      }
      
-    
-
-
      update(field) {
-         return (e) => {
-            
+         return (e) => {  
              this.setState({ [field]: e.target.value })
          }
      }
 
      render(){
          
-         
          const {level, name} = this.state;
-         const { quizzesLost, quizzesWon, userEmail} = this.props
+         const { quizzesLost, quizzesWon, userEmail} = this.props;
          let {questions, counter} = this.state;
-         let problem = "", question ="", explanation = "", options = [];
+         let problem = "", question = "", explanation = "", options = [];
         
-         if (counter <= questions.length) {
-             question = questions[counter]
-         } 
-         if (questions.length) {
-             problem = question.problem;
-         }
-             if (question !== "" && question !== undefined) {
-                 explanation = question.explanation;
-                 options = question.options;
-                 problem = question.problem;
-             }
+         if (counter <= questions.length) question = questions[counter]
+         if (questions.length) problem = question.problem;
+            
+         if (question !== "" && question !== undefined) {
+            explanation = question.explanation;
+            options = question.options;
+            problem = question.problem;
+        }
         
         return (
             <div className="quiz-show-container">
