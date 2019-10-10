@@ -7,8 +7,7 @@ import Problem from './problem';
          super(props);
          this.displayData = [];
          this.questionData = [];
-        //  this.submitter = false;
-         
+
          this.state = {quiz: "",
                         name: "",
                         level: "",
@@ -25,7 +24,6 @@ import Problem from './problem';
                         showQuestionData: this.questionData,
                         selectedOption: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.setNextQuestion = this.setNextQuestion.bind(this);
      }
      
     
@@ -68,8 +66,6 @@ import Problem from './problem';
     
 
      renderQuestion(){
-        // if(this.submitter === false && this.state.nextTurn ){ 
-        //      // Specifically makes sure this is not called when calling handleSubmit
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
@@ -135,12 +131,7 @@ import Problem from './problem';
                 ))}
                 </div>
             </div>
-        )
-        // } else {
-        //     return (
-        //         <div></div>
-        //     )
-        // }                           
+        )                     
      }
 
      setNextQuestion(){
@@ -200,7 +191,6 @@ import Problem from './problem';
              }, 1010)
 
              this.handleSubmit()
-            //  this.submitter = true;
              this.nextTurn = true;
                  setTimeout(() => {
                      this.props.history.push('/');
