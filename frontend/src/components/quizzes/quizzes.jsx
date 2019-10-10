@@ -19,7 +19,6 @@ class Quiz extends React.Component {
     }
 
     UNSAFE_componentWillReceiveProps(newState){
-        console.log("componenet will receive props is run")
         this.setState({ quizzes: newState.quizzes})
     }
 

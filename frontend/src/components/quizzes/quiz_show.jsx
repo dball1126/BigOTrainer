@@ -41,14 +41,11 @@ import Problem from './problem';
                 
          } 
          
-
          if (this.state.quizzes === undefined){
              this.props.fetchQuizzes();
          }
         
      }
-
-     
 
      handleSubmit() {
          let reducer = (acc, val) => acc + val;
