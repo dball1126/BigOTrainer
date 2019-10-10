@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import QuestionContainer from './question_container';
+// import QuestionContainer from './question_container';
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -72,96 +72,96 @@ import QuestionContainer from './question_container';
      };
     
 
-    //  renderQuestion(){
-    //     if(this.submitter === false && this.state.nextTurn ){ 
-    //          // Specifically makes sure this is not called when calling handleSubmit
-    //      let question = "";
-    //     if (this.state.counter <= this.state.questions.length){
-    //         question = this.state.questions[this.state.counter]
-    //     } 
+     renderQuestion(){
+        if(this.submitter === false && this.state.nextTurn ){ 
+             // Specifically makes sure this is not called when calling handleSubmit
+         let question = "";
+        if (this.state.counter <= this.state.questions.length){
+            question = this.state.questions[this.state.counter]
+        } 
         
-    //     let explanation = "";
+        let explanation = "";
         
-    //     let options = [];
-    //     let problem = "";
-    //     let counter = this.state.counter;
+        let options = [];
+        let problem = "";
+        let counter = this.state.counter;
         
-    //     // If the question.problem is blank take it away
-    //     if (this.state.questions.length){
-    //         problem = question.problem;
-    //     setTimeout(() => {
-    //         if (problem === ""){
-    //             this.questionData.push({display: "none"})
+        // If the question.problem is blank take it away
+        if (this.state.questions.length){
+            problem = question.problem;
+        setTimeout(() => {
+            if (problem === ""){
+                this.questionData.push({display: "none"})
 
-    //             } else {
-    //                 this.questionData = [];
-    //             }
-    //             this.setState({showQuestionData: this.questionData})
-    //         }, 100)
-    //     }
+                } else {
+                    this.questionData = [];
+                }
+                this.setState({showQuestionData: this.questionData})
+            }, 100)
+        }
         
-    //     if (question !== "" && question !== undefined) {
+        if (question !== "" && question !== undefined) {
             
-    //         explanation = question.explanation;
+            explanation = question.explanation;
             
-    //         options = question.options;
-    //         problem = question.problem;
-    //     }
+            options = question.options;
+            problem = question.problem;
+        }
         
-    //     return (
-    //         <div className="question-box">
-    //             <div className="explanation">
-    //             {explanation}
-    //             </div>
+        return (
+            <div className="question-box">
+                <div className="explanation">
+                {explanation}
+                </div>
                 
                    
-    //             <div className="problem" style={this.questionData[counter]}>
+                <div className="problem" style={this.questionData[counter]}>
                 
-    //             {problem.split(",").map((line, i) => (
-    //                 <div className={`pre${i}`} id={"pre-problem"} key={i}>
+                {problem.split(",").map((line, i) => (
+                    <div className={`pre${i}`} id={"pre-problem"} key={i}>
                         
-    //                     <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
-    //                                 {line}
-    //                     </SyntaxHighlighter>
+                        <SyntaxHighlighter language="javascript" style={darcula}  id={`star${line}`} >
+                                    {line}
+                        </SyntaxHighlighter>
                                     
-    //                 </div>
-    //             ))}
-    //             </div>
+                    </div>
+                ))}
+                </div>
                 
-    //             <div className="options-box">
+                <div className="options-box">
                   
-    //             {options.map((option, i) => (
-    //                 <div className="options" key={i}>
-    //                     <input type="radio"
-    //                            className="option-radio"
-    //                            value={option.letter}
-    //                             checked={this.state.selectedOption === option.letter}
-    //                             onClick={this.handleOptionChange}
-    //                            onChange={this.update('result')}
-    //                            id="option-radio-id"/>
-    //                     <label htmlFor="option-radio-id">
-    //                         &nbsp; &nbsp;
-    //                             {option.letter} : {option.title.split(" ").map((ele, i) => (
+                {options.map((option, i) => (
+                    <div className="options" key={i}>
+                        <input type="radio"
+                               className="option-radio"
+                               value={option.letter}
+                                checked={this.state.selectedOption === option.letter}
+                                onClick={this.handleOptionChange}
+                               onChange={this.update('result')}
+                               id="option-radio-id"/>
+                        <label htmlFor="option-radio-id">
+                            &nbsp; &nbsp;
+                                {option.letter} : {option.title.split(" ").map((ele, i) => (
                                        
-    //                                     <span className={`letter-title${ele}`} key={i}> 
-    //                                     &nbsp;{ele}
-    //                         </span>
+                                        <span className={`letter-title${ele}`} key={i}> 
+                                        &nbsp;{ele}
+                            </span>
                                        
-    //                             ))}
-    //                     </label>
-    //                     </div>
+                                ))}
+                        </label>
+                        </div>
                     
-    //             ))}
-    //             </div>
-    //         </div>
-    //      )
-    //                             } else {
-    //                                 return (
-    //                                     <div></div>
-    //                                 )
-    //                             }
+                ))}
+                </div>
+            </div>
+         )
+                                } else {
+                                    return (
+                                        <div></div>
+                                    )
+                                }
                                 
-    //  }
+     }
 
      setNextQuestion(){
          const reducer = (acc, val) => acc + val;
@@ -197,7 +197,7 @@ import QuestionContainer from './question_container';
              answer: this.props.quiz.questions[counter].answer
          })
          
-        }, 100)
+        }, 500)
         
         setTimeout(() => {
             this.displayData = [];
@@ -237,11 +237,7 @@ import QuestionContainer from './question_container';
         
      }
      
-    //  handleAnswer(event){
-    //     this.setState({answer: event.currentTarget.value})
-    //     this.setNextQuestion();
-
-    //  }
+    
 
 
      update(field) {
@@ -296,14 +292,14 @@ import QuestionContainer from './question_container';
                         <div className="render-question">
                             {/* {explanation} */}
                            
-                            {/* {this.renderQuestion()} */}
-                            <QuestionContainer questions={questions} 
+                            {this.renderQuestion()}
+                            {/* <QuestionContainer questions={questions} 
                                                 counter={counter} 
                                                 question={question} 
                                                 options={options}
                                                 explanation={explanation}
                                                 problem={problem}
-                                                selectedOption={selectedOption}/>
+                                                selectedOption={selectedOption}/> */}
                         </div>
                         <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>button</button>
                     </div>
