@@ -249,28 +249,20 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
      render(){
          
-        const level = this.state.level;
-        const name = this.state.name;
-         let quizzesLost = this.props.quizzesLost;
-         let quizzesWon = this.props.quizzesWon;
-         let userEmail = this.props.userEmail
-        let selectedOption = this.state.selectedOption;
-        let problem = "";
-         let question = "";
-         let explanation = "";
-         let options = [];
-         let counter = this.state.counter;
-         let questions = this.state.questions || [];
-         if (this.state.counter <= this.state.questions.length) {
-             question = this.state.questions[this.state.counter]
+         
+         const {level, name} = this.state;
+         const { quizzesLost, quizzesWon, userEmail} = this.props
+         let {questions, counter} = this.state;
+         let problem = "", question ="", explanation = "", options = [];
+        
+         if (counter <= questions.length) {
+             question = questions[counter]
          } 
-         if (this.state.questions.length) {
+         if (questions.length) {
              problem = question.problem;
          }
              if (question !== "" && question !== undefined) {
-
                  explanation = question.explanation;
-
                  options = question.options;
                  problem = question.problem;
              }
@@ -290,18 +282,11 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
                     <div className="quiz"  >
                         <div className="quiz-show-name">{name}: Level {level}</div>
                         <div className="render-question">
-                            {/* {explanation} */}
                            
                             {this.renderQuestion()}
-                            {/* <QuestionContainer questions={questions} 
-                                                counter={counter} 
-                                                question={question} 
-                                                options={options}
-                                                explanation={explanation}
-                                                problem={problem}
-                                                selectedOption={selectedOption}/> */}
+                         
                         </div>
-                        <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>button</button>
+                        <button  className="submit-quiz" onClick={() => this.setNextQuestion()}>Submit</button>
                     </div>
                 </div>
             </div>
