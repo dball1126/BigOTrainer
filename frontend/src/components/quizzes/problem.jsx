@@ -5,7 +5,7 @@ import React from 'react';
 const Problem = ({problem}) => {
 
     return (
-        <div>
+        <>
             {problem.split(",").map((line, i) => (
                 <div className={`pre${i}`} id={"pre-problem"} key={i}>
                     <SyntaxHighlighter language="javascript" style={darcula} id={`star${line}`} >
@@ -13,7 +13,7 @@ const Problem = ({problem}) => {
                     </SyntaxHighlighter>
                 </div>
             ))}
-        </div>
+        </>
     )
 }
 

@@ -7,7 +7,7 @@ import Problem from './problem';
          super(props);
          this.displayData = [];
          this.questionData = [];
-         this.submitter = false;
+        //  this.submitter = false;
          
          this.state = {quiz: "",
                         name: "",
@@ -71,17 +71,14 @@ import Problem from './problem';
     
 
      renderQuestion(){
-        if(this.submitter === false && this.state.nextTurn ){ 
-             // Specifically makes sure this is not called when calling handleSubmit
+        // if(this.submitter === false && this.state.nextTurn ){ 
+        //      // Specifically makes sure this is not called when calling handleSubmit
          let question = "";
         if (this.state.counter <= this.state.questions.length){
             question = this.state.questions[this.state.counter]
         } 
         
-        let explanation = "";
-        
-        let options = [];
-        let problem = "";
+        let explanation = "", problem = "", options = [];
         let counter = this.state.counter;
         
         // If the question.problem is blank take it away
@@ -101,7 +98,6 @@ import Problem from './problem';
         if (question !== "" && question !== undefined) {
             
             explanation = question.explanation;
-            
             options = question.options;
             problem = question.problem;
         }
@@ -109,12 +105,11 @@ import Problem from './problem';
         return (
             <div className="question-box">
                 <div className="explanation">
-                {explanation}
+                    {explanation}
                 </div>
                 
                    
                 <div className="problem" style={this.questionData[counter]}>
-                
                     <Problem  problem={problem}/>
                 </div>
                 
@@ -140,22 +135,19 @@ import Problem from './problem';
                                 ))}
                         </label>
                         </div>
-                    
                 ))}
                 </div>
             </div>
-         )
-                                } else {
-                                    return (
-                                        <div></div>
-                                    )
-                                }
-                                
+        )
+        // } else {
+        //     return (
+        //         <div></div>
+        //     )
+        // }                           
      }
 
      setNextQuestion(){
          const reducer = (acc, val) => acc + val;
-        //  this.nextTurn = false;
          let counter = this.state.counter + 1;
          this.setState({ nextTurn: false });
          let questionId = this.state.questionId + 1;
@@ -165,17 +157,15 @@ import Problem from './problem';
          if (this.state.answer !== ""){
             if(this.state.result === this.state.answer) {
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-good" id={lastQuestion}><span>Correct!</span></div>)
-                this.state.answerOptions.push(1);  // You got the question right
-                
+                this.state.answerOptions.push(1);  // You got the question right     
             }   else {
                 this.state.answerOptions.push(0);   // You got the quesiton wrong
                 this.state.showData.push(<div key={Date.now()} className="modal-answer-bad" id={lastQuestion}><span>Incorrect!</span></div>)
             }
             this.setState({showData: this.displayData})
         }
-            //render next question
             
-         if (counter < this.state.questions.length) {
+         if (counter < this.state.questions.length) { //render next question
             setTimeout( () => { 
                 this.setState({
             counter: counter,
@@ -213,13 +203,12 @@ import Problem from './problem';
              }, 1010)
 
              this.handleSubmit()
-             this.submitter = true;
+            //  this.submitter = true;
              this.nextTurn = true;
                  setTimeout(() => {
                      this.props.history.push('/');
                     }, 3000)
         }
-        
      }
      
      update(field) {
