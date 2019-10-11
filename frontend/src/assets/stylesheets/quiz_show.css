@@ -10,13 +10,15 @@
     max-width: 1000px;
     margin: 0 auto;
     font-family: sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .quiz {
     width: 400px;
     /* height: 400px; */
     margin: 0 auto;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0.15);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -32,6 +34,7 @@
     background-color: rgb(239, 136, 105);
     color: #FFFFFF;
     font-weight: bold;
+    border-radius: 4px 4px 0px 0px;
 }
 
 .submit-quiz {
@@ -104,6 +107,7 @@
                  0px 34px 30px rgba(0,0,0,0.1); */
     background-color: #FFFFFF;
     font-family: sans-serif;
+    
 }
 
 .problem-end {
@@ -113,218 +117,54 @@
     padding-left: -10px;
 }
 
-
-/* .pre, code {
-  font-family: monospace, monospace;
-}
-.pre {
-    overflow: auto;
-  background-color: #FCFDFC;
-  background-repeat: repeat-y;
-  background-position: 0 -1rem;
-  background-size: auto 4rem;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg stroke-width='2' stroke='%23EDF3ED' width='1224' height='64' viewBox='0 0 1224 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0L1224,0'/%3E%3Cpath d='M0,4l1224,0'/%3E%3Cpath d='M0,8l1224,0'/%3E%3Cpath d='M0,12l1224,0'/%3E%3Cpath d='M0,16l1224,0'/%3E%3Cpath d='M0,20l1224,0'/%3E%3Cpath d='M0,24l1224,0'/%3E%3Cpath d='M0,28l1224,0'/%3E%3C/svg%3E");
-}
-.pre > code {
-  display: block;
-  padding: 1rem;
-  word-wrap: normal;
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-  text-shadow: 0 1px #fff;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 2;
-  -moz-tab-size: 2; -o-tab-size: 2; tab-size: 2;
-  -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none;
-}
-
-pre > code[class]::before {
-  content: attr(class);
-  display: block;
-  font-size: small;
-  font-style: italic;
-  color: #6c5f7c;
-  margin: -.4rem 0 .6rem -1.2rem
-}
-
-.pre {
-  overflow: hidden;
-  resize: horizontal;
-  min-width: 100%
-} */
-
  .pre1 {
     padding-top: 10px;
-    padding-left: 10px;
-    
-    
+    padding-left: 10px;  
 }
 
 .pre2 {
 padding-left: 15px;
-
-
 }
 
 .pre3 {
 padding-left: 25px;
-
-
 }
 
 .pre4 {
 padding-left: 35px;
-
-
 }
 
 .pre5 {
 padding-left: 45px;
-
-
 }
 
 .pre6 {
 padding-left: 55px;
- 
-  
  } 
 
  .pre7 {
 padding-left: 65px;
-
-
-
 }
 
 .pre8 {
 padding-left: 55px;
-
-
-
 }
 
 .pre9 {
 padding-left: 45px;
-
-
-
 }
 
 .pre10 {
     padding-left: 35px;
-
-
-
 }
 
 .pre11 {
     padding-left: 25px;
 
-
-
 }
 .pre12 {
     padding-left: 15px;
-
-
-
 } 
-
- /* .pre{
-     word-wrap: break-word;
-  white-space: pre;
-  
-  white-space: pre-wrap;
-  display: inline;
-  white-space: pre-line;
-    
-  white-space: -pre-wrap;
- 
-  white-space: -o-pre-wrap;
-
-  white-space: -moz-pre-wrap;
- 
-  white-space: -hp-pre-wrap;
-  
-} */
-
-/* .pre5 code *{
-    margin-bottom: -10px;
-
-} */ 
-
-pre {
-    
-   /* color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-    display: inline;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-    
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-    hyphens: none;  */
-    /* display: inline;
-    word-wrap: normal;
-    padding-bottom: 10px;
-  
-}
-
-/* #starfunction {
-    display: inline;
-} */
-
-
-/* code[class*="language-"],
-pre[class*="language-"] { */
-    
-	/* color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace; */
-	/* direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5; */
-    /* display: inline; */
-	/* -moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4; */
-/* 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none; */
-} 
-
-
-/* .pre-div {
-    padding-bottom: 12px;
-} */
-
-/* pre[class*="star"] {
-    padding: -10px;
-    margin: -10px;
-} */
-
 
 #pre-problem {
     height: 20px;
