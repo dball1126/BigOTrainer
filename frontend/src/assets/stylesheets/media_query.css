@@ -2,9 +2,13 @@
   
   .session-container{
       font-size: 14px;
-  }
+    /* display: flex; */
+    }
+    .homepage-container .session-container {
+        display: flex;
+    }
   .quiz-stats-box{
-      width: 240px;
+      max-width: 240px;
   }
   .losers{
       width: 110px;
@@ -22,7 +26,7 @@
   }
 
   .box-credentials  {
-      width: 160px;
+      max-width: 240px;
       
   }
   
