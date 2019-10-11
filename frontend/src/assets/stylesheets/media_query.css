@@ -67,6 +67,9 @@
 .quiz-item{
     margin-bottom: 10px;
 }
+.quiz-item-box{
+    height: min-content;
+}
 }
 
 @media only screen and (max-width: 550px) {
