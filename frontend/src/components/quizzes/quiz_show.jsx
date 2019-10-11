@@ -208,17 +208,6 @@ import Problem from './problem';
          
          const {level, name} = this.state;
          const { quizzesLost, quizzesWon, userEmail} = this.props;
-         let {questions, counter} = this.state;
-         let problem = "", question = "", explanation = "", options = [];
-        
-         if (counter <= questions.length) question = questions[counter]
-         if (questions.length) problem = question.problem;
-            
-         if (question !== "" && question !== undefined) {
-            explanation = question.explanation;
-            options = question.options;
-            problem = question.problem;
-        }
         
         return (
             <div className="quiz-show-container">
