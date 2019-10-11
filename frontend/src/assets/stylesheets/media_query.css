@@ -3,7 +3,9 @@
   .session-container{
       font-size: 14px;
   }
-
+  .quiz-stats-box{
+      width: 240px;
+  }
   .losers{
       width: 110px;
       padding-right: 5px;
@@ -56,6 +58,14 @@
     z-index: 10000;
     margin-top: -253px;
     margin-left: -42px;
+}
+.quiz-item-container{
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.quiz-item{
+    margin-bottom: 10px;
 }
 }
 
