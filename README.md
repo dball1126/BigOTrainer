@@ -6,4 +6,13 @@ This site specifically focuses on Time Complexity, and allows you to take quizze
 
 # Technologies
 
+MERN Stack.
+
 MongoDB, Express, React, Node.js, HTML5, CSS3.
+
+# Feature: React Syntax Highlighter
+Incorporated React Syntax Highlighter component to render code in a more elegant way for quizzes.
+
+![alt text](https://i.imgur.com/Zwf6kSk.png)
+
+![alt text](https://i.imgur.com/RUIW1yB.png)
