@@ -23,3 +23,10 @@ This is the render function for the Quiz show component. When you begin a quiz t
 ![alt text](https://i.imgur.com/Kamjnhs.png)
 
 ![alt text](https://i.imgur.com/T2WzzcL.png)
+
+# Feature: Responsive Design
+Media queries are used to create a responsive web page so it functions on mobile devices.
+
+![alt text](https://i.imgur.com/U0md5Pt.png)
+
+![alt text](https://i.imgur.com/u2GTUeQ.png)
