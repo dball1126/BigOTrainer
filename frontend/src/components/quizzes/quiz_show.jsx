@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NavBar from '../nav/navbar_container';
 import Problem from './problem';
+
  class QuizShow extends React.Component{
      constructor(props){
          super(props);
@@ -103,7 +104,9 @@ import Problem from './problem';
                 
                    
                 <div className="problem" style={this.questionData[counter]}>
+                    
                     <Problem  problem={problem}/>
+                    
                 </div>
                 
                 <div className="options-box">
