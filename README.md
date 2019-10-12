@@ -17,3 +17,9 @@ Incorporated React Syntax Highlighter component to render code in a more elegant
 
 ![alt text](https://i.imgur.com/RUIW1yB.png)
 
+# Feature: Showing a Quiz
+This is the render function for the Quiz show component. When you begin a quiz this is what renders first.
+
+![alt text](https://i.imgur.com/Kamjnhs.png)
+
+![alt text](https://i.imgur.com/T2WzzcL.png)
