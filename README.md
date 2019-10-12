@@ -16,3 +16,4 @@ Incorporated React Syntax Highlighter component to render code in a more elegant
 ![alt text](https://i.imgur.com/Zwf6kSk.png)
 
 ![alt text](https://i.imgur.com/RUIW1yB.png)
+

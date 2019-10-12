@@ -214,8 +214,6 @@ import Problem from './problem';
         
         return (
             <div className="quiz-show-container">
-                <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css" />
-                <script src="algebra-0.2.5.min.js"></script>
                 <NavBar quizzesWon={quizzesWon} quizzesLost={quizzesLost} userEmail={userEmail}/>
                 <div className = "quiz-title-show">
                     <h2>Time Complexity / Runtime Analysis</h2>
