@@ -15,6 +15,7 @@
     float: right;
     line-height: .4;
     border-radius: 50%;
+    z-index: 100;
 }
 
 .modal-answer-bad{
@@ -32,6 +33,7 @@
     color: Black;
     line-height: .4;
     border-radius: 50%;
+    z-index: 100;
 }
 
 .modal-result-bad{
@@ -45,6 +47,7 @@
     font-weight: 700;
     color: Black;
     border-radius: 50%;
+    z-index: 100;
 }
 
 .modal-result-good{
@@ -58,6 +61,7 @@
     font-weight: 700;
     color: #FFFFFF;
     border-radius: 50%;
+    z-index: 100;
 }
 
 .modal-result {

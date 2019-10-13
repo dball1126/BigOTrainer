@@ -140,6 +140,18 @@
     .problem {
         font-size: 14px;
     }
+    .explanation {
+        font-size: 20px;
+    }
+    .option-box{
+        font-size: 20px;
+    }
+    .logout-box{
+        max-width: 50px;
+    }
+    .logout-button{
+        max-width: 45px;
+    }
 }
 
 
@@ -155,14 +167,23 @@
     .winners {
         max-width: 40px;
     }
+    .demo-login{
+        width: 100px;
+    }
+    .session-box .signup-box{
+        width:80px;
+    }
+    .session-box .login-box{
+        width:80px;
+    }
 }
 
 
-@media only screen and (max-width: 320px) { 
+@media only screen and (max-width: 325px) { 
 
 .homepage-title #spin-doctor{
    
-    margin-top: -209px;
+    margin-top: -205px;
     
 }
 .logout-box {
@@ -174,5 +195,15 @@
     padding-right: 5px;
     padding-left: 5px;
 }
+.box-credentials .logout-button {
+    max-width: 50px;
+}
+
+.session-box .signup-box{
+        width:60px;
+    }
+    .session-box .login-box{
+        width:60px;
+    }
 
 }
