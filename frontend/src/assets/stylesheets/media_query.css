@@ -134,16 +134,14 @@
     .quiz{
         max-width: 400px;
     }
-    .option-box {
-        font-size: 25px;
-    }
+    
     .problem {
         font-size: 14px;
     }
     .explanation {
         font-size: 20px;
     }
-    .option-box{
+    .options-box{
         font-size: 20px;
     }
     .logout-box{
@@ -159,7 +157,7 @@
 
 .homepage-title #spin-doctor{
    
-    margin-top: -224px;
+    margin-top: -209px;
 }
     .losers {
         max-width: 40px;
