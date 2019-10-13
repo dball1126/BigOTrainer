@@ -21,8 +21,9 @@ class NavBar extends React.Component {
                     {/* <Link to={'/quizzes'}>All Quizzes</Link> */}
                     
                         <div className="quiz-stats-box">
-                            <span className="winners">Quizzes Won: {this.props.quizzesWon}</span>
-                            <span className="losers">Quizzes Lost: {this.props.quizzesLost}</span>
+                            <span className="title-win-lose"><b className="quiz-stat-title">Quizzes:</b></span>
+                            <span className="winners">Won: {this.props.quizzesWon}</span>
+                            <span className="losers">Lost: {this.props.quizzesLost}</span>
                         </div>
                         <div className="box-credentials">
 

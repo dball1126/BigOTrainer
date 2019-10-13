@@ -1,3 +1,14 @@
+@media only screen and (max-width: 800px) { 
+
+.homepage-title #spin-doctor{
+   
+    margin-top: -382px;
+    
+}
+}
+
+
+
 @media only screen and (max-width: 600px) {
   
   .session-container{
@@ -85,11 +96,39 @@
 }
 }
 
-@media only screen and (max-width: 420px) { 
+@media only screen and (max-width: 414px) { 
 
 .homepage-title #spin-doctor{
    
-    margin-top: -223px;
+    margin-top: -237px;
+    
+}
+}
+
+@media only screen and (max-width: 411px) { 
+
+.homepage-title #spin-doctor{
+   
+    margin-top: -226px;
+    
+}
+}
+
+@media only screen and (max-width: 375px) { 
+
+.homepage-title #spin-doctor{
+   
+    margin-top: -224px;
+    
+}
+}
+
+
+@media only screen and (max-width: 320px) { 
+
+.homepage-title #spin-doctor{
+   
+    margin-top: -209px;
     
 }
 }
