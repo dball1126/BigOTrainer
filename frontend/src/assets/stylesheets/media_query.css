@@ -31,7 +31,7 @@
   }
 
   .nav-email-box{
-      width: 80px;
+      max-width: 80px;
       font-size: 10px;
   }
 
@@ -41,11 +41,11 @@
   }
   
   .box-credentials .logout-box  {
-          width: 60px;
+          max-width: 60px;
     }
 
   .box-credentials .logout-button{
-      width: 60px;
+      max-width: 60px;
   }
 
 
@@ -114,13 +114,26 @@
 }
 }
 
+@media only screen and (max-width: 385px) { 
+
+    .quiz-stats-box {
+        font-size: 12px;
+    }
+}
+
+
 @media only screen and (max-width: 375px) { 
 
 .homepage-title #spin-doctor{
    
     margin-top: -224px;
-    
 }
+    .losers {
+        max-width: 40px;
+    }
+    .winners {
+        max-width: 40px;
+    }
 }
 
 
