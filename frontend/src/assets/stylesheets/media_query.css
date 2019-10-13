@@ -97,6 +97,9 @@
 .quiz-title {
     font-size: 20px;
 }
+.quiz-title-show{
+    font-size: 20px;
+}
 }
 
 @media only screen and (max-width: 414px) { 
@@ -121,6 +124,21 @@
 
     .quiz-stats-box {
         font-size: 12px;
+    }
+    .quiz-title-show {
+        font-size: 15px;
+    }
+    .quiz-show-box .quiz {
+        max-width: 400px;
+    }
+    .quiz{
+        max-width: 400px;
+    }
+    .option-box {
+        font-size: 25px;
+    }
+    .problem {
+        font-size: 14px;
     }
 }
 

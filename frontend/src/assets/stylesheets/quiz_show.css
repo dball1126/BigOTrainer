@@ -6,6 +6,8 @@
     background-color: #f7f7f7;
 }
 
+
+
 .quiz-show-box {
     max-width: 1000px;
     margin: 0 auto;
@@ -15,7 +17,7 @@
 }
 
 .quiz {
-    width: 400px;
+    max-width: 400px;
     /* height: 400px; */
     margin: 0 auto;
     /* margin-top: 10px; */
