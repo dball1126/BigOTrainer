@@ -119,6 +119,17 @@
     margin-top: -226px;
     
 }
+.losers{
+    line-height: 3.0;
+
+}
+.winners{
+    line-height: 3.0;
+
+}
+.title-win-lose{
+    line-height: 3.0;
+}
 }
 
 @media only screen and (max-width: 385px) { 

@@ -19,10 +19,16 @@
 }
 
 .losers {
-    text-align: center;
+    /* text-align: center;
     line-height: 2.5;
     border-radius: 4px;
     width: 150px;
+    background-color: #FFFFFF;
+    color: red; */
+    text-align: left; 
+    line-height: 2.5;
+    border-radius: 4px;
+    width: 100px;
     background-color: #FFFFFF;
     color: red;
 }
@@ -32,7 +38,7 @@
     background-color: #FFFFFF;
     display: flex;
     justify-content: flex-start;
-    
+    border: solid 1px rgb(239, 136, 105);
     
     border-radius: 4px;
     font-weight: 600px;
