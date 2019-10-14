@@ -53,6 +53,7 @@
     font-size: 30px;
     text-shadow: none;
     height: 60px;
+    height: min-content;
 }
 
 .main-title{
@@ -202,6 +203,16 @@
     }
     .session-box .login-box{
         width:60px;
+    }
+    .problem{
+        font-size: 11px;
+    }
+    .options-box{
+        font-size: 20px;
+        padding-left: 0px;
+    }
+    .explanation{
+        font-size: 15px;
     }
 
 }
