@@ -173,3 +173,10 @@ padding-left: 45px;
 #pre-problem {
     height: 20px;
 }
+
+#pre-problem-last {
+    height: 20px;
+}
+#pre-problem-last pre code{
+    display: none;
+}
