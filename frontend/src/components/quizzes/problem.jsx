@@ -8,7 +8,7 @@ const Problem = ({problem}) => {
     return (
         <>
             {problem.split(",").map((line, i) => (
-                <div className={`pre${i}`} id={length === i ? "pre-problem-last" : "pre-problem"} key={i}>
+                <div className={`pre${i}`} id={length === i && length !== 0 ? "pre-problem-last" : "pre-problem"} key={i}>
                     <SyntaxHighlighter language="javascript" style={darcula} id={`star${line}`} >
                         {line}
                     </SyntaxHighlighter>
