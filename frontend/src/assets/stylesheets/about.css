@@ -2,6 +2,9 @@
     max-width: 800px;
     color: #FFFFFF;
     margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.2;
+    padding-bottom: 50px;
 }
 
 .about a {
@@ -16,4 +19,11 @@
     padding-bottom: 50px;
     font-weight: 700;
     font-size: 50px;
+}
+
+.about-body {
+    max-height: 800px;
+    
+    background-color: rgb(239, 136, 105);
+    
 }
