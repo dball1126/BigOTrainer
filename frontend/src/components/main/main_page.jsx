@@ -26,7 +26,7 @@ class MainPage extends React.Component {
                     <Spinner id="spin-doctor" name="ball-scale-multiple" color="black" />
                 </div>       
                        <div className="description">This is a website where you can train your skills on the runtime of an algorithm, method, or function.
-                                                  So <Link to={'/signup'} className="main-page-links">Signup</Link>, or try the <span className="main-page-links" onClick={() => this.props.login({ email: `demo@demo.com`, password: 'password' })}>Demo Login</span> and take some Time Complexity Quizzes.</div>
+                                                  So <Link to={'/signup'} className="main-page-links">Signup</Link>, or try the <span className="main-page-links" onClick={() => this.props.login({ email: `demo@demo.com`, password: 'password' })}>Demo Login</span>, and take some Time Complexity Quizzes.</div>
                
             </div>
                 <div className="homepage-body">
