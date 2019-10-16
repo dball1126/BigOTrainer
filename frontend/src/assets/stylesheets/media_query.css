@@ -21,11 +21,11 @@
       max-width: 240px;
   }
   .losers{
-      max-width: 50px;
+      max-width: 55px;
       padding-right: 5px;
   }
   .winners{
-      max-width: 50px;
+      max-width: 55px;
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -103,12 +103,32 @@
 }
 }
 
+@media only screen and (max-width: 466px) {
+
+
+.homepage-title #spin-doctor{
+    
+    margin-top: -226px;
+    
+}
+.problem {
+        font-size: 14px;
+    }
+
+}
+
 @media only screen and (max-width: 414px) { 
 
 .homepage-title #spin-doctor{
    
     margin-top: -237px;
     
+}
+.winners{
+    max-width: 50px;
+}
+.losers{
+    max-width: 50px;
 }
 }
 
@@ -147,9 +167,7 @@
         max-width: 400px;
     }
     
-    .problem {
-        font-size: 14px;
-    }
+    
     .explanation {
         font-size: 20px;
     }
@@ -170,12 +188,13 @@
 .homepage-title #spin-doctor{
    
     margin-top: -223px;
+    /* margin-top: -212px; */
 }
     .losers {
-        max-width: 40px;
+        max-width: 45px;
     }
     .winners {
-        max-width: 40px;
+        max-width: 45px;
     }
     .demo-login{
         width: 100px;
