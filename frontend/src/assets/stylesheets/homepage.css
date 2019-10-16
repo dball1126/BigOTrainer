@@ -7,6 +7,7 @@
 @import './media_query.css';
 @import './animations.css';
 @import './about.css';
+@import './footer.css';
 
 .homepage-container {
     font-size: 16px;
@@ -141,47 +142,6 @@
     
 }
 
-.homepage-footer {
-    
-    height: 200px;
-    background-color: #8080804f;
-}
-
-
-
-.footer-img-wrapper{
-    
-    padding-top: 35px;
-    
-   
-}
-
-.main-page-logo-box {
-    display: flex;
-    justify-content: center;
-    padding-top: 75px;
-    padding-left: 5px;
-}
-.main-page-img-box {
-    
-}
-
-.main-page-img-box img {
-    height: 40px;
-    padding-left: 10px;
-    padding-right: 10px; 
-}
-
-
-
-
-
-.footer-content-wrapper{
-    height: 390px;
-    width: 960px;
-    margin: 0 auto;
-
-}
 
 
 .description {

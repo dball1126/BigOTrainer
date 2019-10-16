@@ -45,6 +45,9 @@ class MainPage extends React.Component {
                 <footer className="homepage-footer">
                     
                         <div className="main-page-logo-box">
+                        <div className="logo-box">
+                            <Link to={'/'} className="logo-link">BigO</Link>
+                        </div>
                             <div className="main-page-img-box">
                                 <a href="https://www.linkedin.com/in/daniel-ball-1502b062/"><img src="https://yap-dev.s3.amazonaws.com/Linkedin-logo.png" /></a>
                             </div>
