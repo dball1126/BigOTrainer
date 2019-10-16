@@ -33,6 +33,7 @@
   .nav-email-box{
       max-width: 80px;
       font-size: 10px;
+      line-height: 4;
   }
 
   .box-credentials  {
@@ -222,8 +223,8 @@
 }
 
 .nav-email-box {
-    padding-right: 5px;
-    padding-left: 5px;
+    
+    display: none;
 }
 .box-credentials .logout-button {
     max-width: 50px;
