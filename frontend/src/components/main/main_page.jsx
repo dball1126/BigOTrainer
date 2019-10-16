@@ -44,6 +44,19 @@ class MainPage extends React.Component {
                 </div>
                 <footer className="homepage-footer">
                     
+                        <div className="main-page-logo-box">
+                            <div className="main-page-img-box">
+                                <a href="https://www.linkedin.com/in/daniel-ball-1502b062/"><img src="https://yap-dev.s3.amazonaws.com/Linkedin-logo.png" /></a>
+                            </div>
+                            <div className="main-page-img-box">
+                                <a href="https://github.com/dball1126"><img src="https://yap-dev.s3.amazonaws.com/GitHub-logo-32px.png" /></a>
+                            </div>
+                            <div className="main-page-img-box">
+                                <a href="https://angel.co/daniel-ball-6"><img src="https://yap-dev.s3.amazonaws.com/AngelList_Black_Victory_Hand.png" /></a>
+                            </div>
+                        </div>
+                        
+                   
                 </footer>
             </div>
                        
