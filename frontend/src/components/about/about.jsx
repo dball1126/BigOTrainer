@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import NavBar from '../nav/navbar';
 import React from 'react';
-
 const About = () => {
     return (
         <div className="homepage-container">
