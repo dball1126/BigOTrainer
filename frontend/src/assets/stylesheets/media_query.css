@@ -169,7 +169,7 @@
 
 .homepage-title #spin-doctor{
    
-    margin-top: -209px;
+    margin-top: -223px;
 }
     .losers {
         max-width: 40px;
@@ -226,4 +226,12 @@
         font-size: 15px;
     }
 
+}
+
+@media only screen and (max-width: 325px) { 
+    .homepage-title #spin-doctor{
+   
+    margin-top: -209px;
+    
+}
 }
