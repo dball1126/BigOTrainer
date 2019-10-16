@@ -6,7 +6,7 @@
 @import './stats.css';
 @import './media_query.css';
 @import './animations.css';
-
+@import './about.css';
 
 .homepage-container {
     font-size: 16px;
