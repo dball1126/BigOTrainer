@@ -174,11 +174,12 @@
     .options-box{
         font-size: 20px;
     }
-    .logout-box{
+    .box-credentials .logout-box{
         max-width: 50px;
+        font-size: 12px;
     }
-    .logout-button{
-        max-width: 45px;
+    .box-credentials .logout-button {
+        max-width: 50px;
     }
 }
 
