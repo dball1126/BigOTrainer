@@ -123,3 +123,9 @@
     font-family:inherit;
     font-size: 15px;
 }
+
+.back-arrow{
+    width: 50px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
