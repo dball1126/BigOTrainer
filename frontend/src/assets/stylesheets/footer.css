@@ -1,6 +1,6 @@
 .homepage-footer {
     
-    height: 200px;
+    
     background-color: #8080804f;
 }
 
@@ -12,7 +12,7 @@
 .main-page-logo-box {
     display: flex;
     justify-content: center;
-    padding-top: 75px;
+    padding-top: 15px;
 }
 
 .main-page-img-box img {
