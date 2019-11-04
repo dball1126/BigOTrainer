@@ -2,8 +2,14 @@
 
 .homepage-title #spin-doctor{
    
-    margin-top: -382px;
-    
+    /* margin-top: -382px; */
+    display: none;
+
+}
+.homepage-banner .description{
+    padding-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .about-body .about{
     max-width: 600px;
@@ -71,7 +77,7 @@
     font-size: 75px
 }
 
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
     transform: scale(1);
     position: relative;
     left: 50%;
@@ -79,7 +85,7 @@
     z-index: 10000;
     margin-top: -253px;
     margin-left: -42px;
-}
+} */
 .quiz-item-container{
     background-color: #f5f5f5;
     padding-top: 10px;
@@ -96,11 +102,11 @@
 @media only screen and (max-width: 550px) {
 
 
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
     
     margin-top: -239px;
     
-}
+} */
 .quiz-title {
     font-size: 20px;
 }
@@ -112,11 +118,11 @@
 @media only screen and (max-width: 466px) {
 
 
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
     
     margin-top: -226px;
     
-}
+} */
 .problem {
         font-size: 14px;
     }
@@ -125,11 +131,11 @@
 
 @media only screen and (max-width: 414px) { 
 
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
    
     margin-top: -237px;
     
-}
+} */
 .winners{
     max-width: 60px;
 }
@@ -142,11 +148,11 @@
 .about-body .about{
     max-width: 300px;
 }
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
    
     margin-top: -226px;
     
-}
+} */
 .losers{
     line-height: 3.0;
 
@@ -194,11 +200,11 @@
 
 @media only screen and (max-width: 375px) { 
 
-.homepage-title #spin-doctor{
+/* .homepage-title #spin-doctor{
    
     margin-top: -223px;
-    /* margin-top: -212px; */
-}
+     margin-top: -212px;
+} */
     .losers {
         max-width: 45px;
     }
@@ -257,9 +263,12 @@
 }
 
 @media only screen and (max-width: 325px) { 
-    .homepage-title #spin-doctor{
+    /* .homepage-title #spin-doctor{
    
-    margin-top: -209px;
+    margin-top: -209px; 
     
+}*/
+.main-title {
+    font-size: 40px;
 }
 }
