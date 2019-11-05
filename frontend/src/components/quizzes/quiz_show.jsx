@@ -223,7 +223,11 @@ import Problem from './problem';
                     </div>
                 <div className="quiz-show-box">
                     <div className="quiz"  >
-                        <div className="quiz-show-name">{name}: Level {level}</div>
+                        
+                        <div className="quiz-show-name">
+                            <div className="show-name-icon"><i className="devicon-javascript-plain colored" id="deviconz"></i></div>
+                            <div className="show-name-level">{name}: Level {level}</div>
+                        </div>
                         <div className="render-question">
                            
                             {this.renderQuestion()}

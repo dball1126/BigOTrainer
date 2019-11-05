@@ -30,7 +30,7 @@
 
 .quiz-show-name {
     text-transform: capitalize;
-    text-align: center;
+    display: flex;
     font-size: 22px;
     padding: 20px;
     background-color: rgb(239, 136, 105);
@@ -181,3 +181,9 @@ padding-left: 45px;
     display: none;
 }
 
+.show-name-icon{
+    width: 100px;
+    
+    display: flex;
+    align-self: flex-end;
+}
