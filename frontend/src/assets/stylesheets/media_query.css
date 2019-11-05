@@ -268,6 +268,14 @@
     margin-top: -209px; 
     
 }*/
+.show-name-icon {
+    width: 80px;
+}
+
+.show-name-level {
+    font-size: 18px;
+}
+
 .main-title {
     font-size: 40px;
 }
