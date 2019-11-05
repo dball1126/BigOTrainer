@@ -271,4 +271,17 @@
 .main-title {
     font-size: 40px;
 }
+.main-page-logo-box{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.main-page-logo-box .logo-link{
+    font-size: 25px;
+    line-height: 1.4;
+    height: 30px;
+}
+.main-page-logo-box .main-page-img-box img {
+    height: 30px;
+}
 }
